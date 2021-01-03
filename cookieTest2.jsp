@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>호연 짱짱빠따</title>
+<title>호연 짱짱</title>
 <style type="text/css">
 	#d_cookie{
 		border: 1px solid black;
@@ -43,10 +43,10 @@
 </script>
 <div id="d_cookie">쿠키정보 전광판<br><br></div>
 <br><br>
-<button id="btn_make">쿠키생성</button>
-<button id="btn_update">쿠키수정</button>
-<button id="btn_delete">쿠키삭제</button>
-<button id="btn_move">페이지이동</button>
-<button id="btn_confirm">쿠키값 확인</button>
+<button id="btn_make">생성</button>
+<button id="btn_update">수정</button>
+<button id="btn_delete">삭제</button>
+<button id="btn_move">페이지</button>
+<button id="btn_confirm">확인</button>
 </body>
 </html>
