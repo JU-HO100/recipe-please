@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>깃허브 테스트</title>
+<title>호연 짱짱빠따</title>
 <style type="text/css">
 	#d_cookie{
 		border: 1px solid black;
