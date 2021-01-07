@@ -11,6 +11,7 @@
 		</td>
 		<td style="width: 80%; padding-left: 5%; padding-right: 5%;">
 <<<<<<< HEAD
+<<<<<<< HEAD
   		<h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px;">레시피 랭킹</h1>
 		<table class="table table-hover">
 			<tbody>
@@ -124,6 +125,8 @@
 					</table>
 				</td>
 =======
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 		<table style="width: 100%">
   		<tr>
   			<td>
@@ -167,6 +170,9 @@
 		      	</td>
 		        <td style="width: 15%">셰프이름</td>
 		        <td style="width: 70%">레시피 내용</td>
+<<<<<<< HEAD
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
+=======
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 		      </tr>
 		  </tbody>
@@ -175,7 +181,11 @@
 	</tr>
 </table>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div id="dlg_chefDetail" closed="true" class="easyui_dialog" style="padding: 20px 50px">
+=======
+<div id="dlg_recipeDetail" closed="true" class="easyui_dialog" style="padding: 20px 50px">
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 <div id="dlg_recipeDetail" closed="true" class="easyui_dialog" style="padding: 20px 50px">
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a

@@ -15,7 +15,11 @@
 		  <table class="table table-hover">
 		    <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		      <tr style="cursor: pointer;">
+=======
+		      <tr>
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 		      <tr>
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
@@ -26,7 +30,11 @@
 		        <td style="width: 20%">셰프1</td>
 		      </tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		       <tr style="cursor: pointer;">
+=======
+		      <tr>
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 		      <tr>
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
@@ -37,7 +45,11 @@
 		        <td>셰프2</td>
 		      </tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		       <tr style="cursor: pointer;">
+=======
+		      <tr>
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 		      <tr>
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
@@ -48,7 +60,11 @@
 		        <td>셰프3</td>
 		      </tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		       <tr style="cursor: pointer;">
+=======
+		      <tr>
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 		      <tr>
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a

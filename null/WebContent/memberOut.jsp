@@ -7,12 +7,18 @@
 <%@ include file="/common/bootstrap_common.jsp"%>
 <title>오늘 뭐 먹지?</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 <script type="text/javascript">
 function memberOutAction() {
 	location.href="./index.jsp";
 }
 </script>
+<<<<<<< HEAD
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
+=======
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 </head>
 <body>

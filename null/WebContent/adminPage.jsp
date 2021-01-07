@@ -7,6 +7,7 @@
 <%@ include file="/common/bootstrap_common.jsp"%>
 <title>오늘 뭐 먹지?</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script type="text/javascript">
 function recipeControl() {
 	location.href="./adminPage.jsp";
@@ -18,6 +19,8 @@ function memberControl() {
 	location.href="./memberControl.jsp";
 }
 </script>
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 </head>
@@ -43,7 +46,11 @@ function memberControl() {
 		<tr>
 			<td style="padding-top: 4%">
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<%@ include file="./recipeControlContent.jsp" %>
+=======
+				<%@ include file="./adminContent.jsp" %>
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
 				<%@ include file="./adminContent.jsp" %>
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a

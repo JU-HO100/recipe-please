@@ -4,6 +4,7 @@
 <table style="width: 100%">
 	<tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<td style="width: 20%; vertical-align: top;">
 			<div class="btn-group-vertical" style="width: 100%;">
 				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="memberUpdateContent()">회원정보 수정</button>
@@ -81,6 +82,8 @@
 		  </tbody>
 		</table>
 =======
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 		<td style="width: 23%; vertical-align: top;">
 			<div class="card" style="width: 18rem;">
 			  <ul class="list-group list-group-flush">
@@ -151,6 +154,9 @@
 			        </tr>
 			      </tbody>
  			 </table>
+<<<<<<< HEAD
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
+=======
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 		</td>
 	</tr>

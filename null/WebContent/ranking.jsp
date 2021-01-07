@@ -10,7 +10,11 @@
 	function chefView(){
   		$('#dlg_chefDetail').dialog({
 <<<<<<< HEAD
+<<<<<<< HEAD
   		    title: '__셰프님', //셰프이름 데이터 받자
+=======
+  		    title: '__셰프님',
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 =======
   		    title: '__셰프님',
 >>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
