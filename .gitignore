@@ -1,0 +1,40 @@
+.DS_Store
+*.log
+<<<<<<< HEAD
+*.iml
+*.xml
+temp/
+=======
+*.xml
+temt/
+# Directories #
+/build/
+/bin/
+target/
+ 
+# OS Files #
+.DS_Store
+  
+*.class
+ 
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+      
+# Eclipse #
+.project
+.metadata
+.classpath
+.settings/
+.loadpath
+ 
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+local.properties
+/src/main/resources/rebel.xml
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
