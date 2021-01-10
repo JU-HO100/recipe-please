@@ -22,7 +22,7 @@
 				<p style="font-family: Black Han Sans, sans-serif; color: black;">관리자</p>
 			</td>
 			<td style="width: 8%;  padding-top: 15px; text-align: right">
-				<a href="./adminPage.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
+				<a href="./memberControl.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
 					관리자페이지
 				</a>
 				&nbsp;&nbsp;&nbsp;

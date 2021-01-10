@@ -16,11 +16,11 @@
 			<table align="left" style="width: 70%">
 				<tr style="height: 80px;">
 					<td style="width: 50%; text-align: center;">
-						<p
-							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
+						<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
 					</td>
-					<td style="widows: 50%"><input type="text" name="name"
-						id="name" style="float: left;"></td>
+					<td style="widows: 50%">
+						<input value="안준헌" type="text" name="name" id="name" style="float: left;">
+					</td>
 				</tr>
 				<tr style="height: 80px;">
 					<td style="width: 50%; text-align: center;">
@@ -37,7 +37,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">아이디</p>
 					</td>
-					<td><input type="text" name="id" id="id" style="float: left;">
+					<td><input value="test123" type="text" name="id" id="id" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">
@@ -45,7 +45,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">비밀번호</p>
 					</td>
-					<td><input type="password" name="pw" id="pw"
+					<td><input value="1234" type="text" name="pw" id="pw"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -53,7 +53,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이메일</p>
 					</td>
-					<td><input type="email" name="email" id="email"
+					<td><input value="test5678@gmail.com" type="email" name="email" id="email"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -61,7 +61,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">닉네임</p>
 					</td>
-					<td><input type="text" name="nickname" id="nickname"
+					<td><input value="널포인터" type="text" name="nickname" id="nickname"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -69,7 +69,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">P.H</p>
 					</td>
-					<td><input type="tel" name="phone" id="phone"
+					<td><input value="01012345678" type="tel" name="phone" id="phone"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -77,7 +77,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">생년월일</p>
 					</td>
-					<td><input type="date" name="date" id="date"
+					<td><input value="1994-07-16" type="date" name="date" id="date"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 120px;">

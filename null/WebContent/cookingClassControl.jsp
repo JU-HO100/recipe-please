@@ -8,7 +8,7 @@
 <title>오늘 뭐 먹지?</title>
 <script type="text/javascript">
 function recipeControl() {
-	location.href="./adminPage.jsp";
+	location.href="./recipeControl.jsp";
 }
 function cookingClassControl() {
 	location.href="./cookingClassControl.jsp";

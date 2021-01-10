@@ -6,6 +6,17 @@
 <meta charset="UTF-8">
 <%@ include file="/common/bootstrap_common.jsp"%>
 <title>오늘 뭐 먹지?</title>
+<script type="text/javascript">
+function recipeControl() {
+	location.href="./recipeControl.jsp";
+}
+function cookingClassControl() {
+	location.href="./cookingClassControl.jsp";
+}
+function memberControl() {
+	location.href="./memberControl.jsp";
+}
+</script>
 </head>
 <body>
 	<table align="center" style="width: 70% ; height: 100%;">
@@ -28,7 +39,7 @@
 			<!-- END Mypage -->
 		<tr>
 			<td style="padding-top: 4%">
-				<%@ include file="./adminMemberManagementContent.jsp" %>
+				<%@ include file="./recipeControlContent.jsp" %>
 			</td>
 		</tr>
 			<!-- END Mypage -->

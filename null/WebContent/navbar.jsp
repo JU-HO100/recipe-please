@@ -16,7 +16,7 @@
 							</a>
 						</li>
 						<li class="nav-item" >
-							<a class="nav-link" href="./ranking.jsp">
+							<a class="nav-link" href="./ranking.jsp?ranking=0">
 								랭킹
 							</a>
 						</li>

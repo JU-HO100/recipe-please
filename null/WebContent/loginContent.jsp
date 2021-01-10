@@ -7,8 +7,8 @@
 								<tr>
 									<td style="padding-bottom: 5%">
 										<div class="col">
-											<input id="M_ID" name="M_ID" class="username" type="text" placeholder="아이디 입력" style="border: solid 1px black;" required> 
-											<input id="M_PW" name="M_PW"  class="password" type="password" style="border: solid 1px black;" placeholder="비밀번호 입력" required>
+											<input value="test123" id="M_ID" name="M_ID" class="username" type="text" placeholder="아이디 입력" style="border: solid 1px black;" required> 
+											<input value="1234" id="M_PW" name="M_PW"  class="password" type="password" style="border: solid 1px black;" placeholder="비밀번호 입력" required>
 											<div style="padding-top: 4%;"> 
 												<input class="btn btn-outline-dark" type="submit" value="Login" onclick="loginAction()" style="width: 100%">
 											</div>

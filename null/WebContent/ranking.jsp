@@ -6,18 +6,11 @@
 <meta charset="UTF-8">
 <title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
+<% String ranking = request.getParameter("ranking");%>
 <script type="text/javascript">
 	function chefView(){
   		$('#dlg_chefDetail').dialog({
-<<<<<<< HEAD
-<<<<<<< HEAD
-  		    title: '__셰프님', //셰프이름 데이터 받자
-=======
-  		    title: '__셰프님',
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
-=======
-  		    title: '__셰프님',
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
+  		    title: '__셰프님의 레시피', //셰프이름 데이터 받자
   		    width: 800,
   		    height: 800,
   		    closed: true,
@@ -28,16 +21,7 @@
   		$('#dlg_chefDetail').dialog('open');
   	}
 	function recipeView(){
-  		$('#dlg_recipeDetail').dialog({
-  		    title: '__요리',
-  		    width: 800,
-  		    height: 800,
-  		    closed: true,
-  		    cache: false,
-  		    href: './recipeDetail.jsp',//나중에 쿼리스트링으로 값 보내기
-  		    modal: true
-  		});  		
-  		$('#dlg_recipeDetail').dialog('open');
+		location.href="#"; //해당하는 레시피로 가기
   	}
 	function rankingChefContent(){
 	    $.ajax({
@@ -68,6 +52,23 @@
 
 	    });
 	  }
+	 $(function(){
+         /*웹페이지 열었을 때*/
+         $("#likeOff").show();
+         $("#likeOn").hide();
+
+         /*likeOff을 클릭했을 때 likeOn를 보여줌*/
+         $("#likeOff").click(function(){
+             $("#likeOff").hide();
+             $("#likeOn").show();
+         });
+
+         /*likeOn를 클릭했을 때 likeOff을 보여줌*/
+         $("#likeOn").click(function(){
+             $("#likeOff").show();
+             $("#likeOn").hide();
+         });
+     });
 </script>
 </head>
 <body>
@@ -91,7 +92,11 @@
 			<!-- Content -->
 		<tr>
 			<td style="padding-top: 4%" id="tb_ajax">
+				<% if(ranking.equals("0")){ %>
 				<%@ include file="./rankingChefContent.jsp" %>
+				<%}else{ %>
+				<%@ include file="./rankingRecipeContent.jsp" %>
+				<%} %>
 			</td>
 		</tr>			
 			<!-- Content -->

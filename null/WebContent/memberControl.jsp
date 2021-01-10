@@ -7,14 +7,11 @@
 <%@ include file="/common/bootstrap_common.jsp"%>
 <title>오늘 뭐 먹지?</title>
 <script type="text/javascript">
-function recipeControl() {
-	location.href="./adminPage.jsp";
-}
-function cookingClassControl() {
-	location.href="./cookingClassControl.jsp";
-}
 function memberControl() {
 	location.href="./memberControl.jsp";
+}
+function blackList() {
+	location.href="./blackList.jsp";
 }
 </script>
 </head>

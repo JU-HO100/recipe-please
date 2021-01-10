@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/common/bootstrap_common.jsp"%>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <script type="text/javascript">
 function memberUpdateContent(){
     $.ajax({
@@ -65,10 +63,6 @@ function memberOutContent(){
     });
   }
 </script>
-=======
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
-=======
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 <title>오늘 뭐 먹지?</title>
 </head>
 <body>
@@ -91,18 +85,8 @@ function memberOutContent(){
 			
 			<!-- END Mypage -->
 		<tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<td style="padding-top: 4%" id="tb_ajax">
 				<%@ include file="./memberUpdateContent.jsp" %>
-=======
-			<td style="padding-top: 4%">
-				<%@ include file="./mypageContent.jsp" %>
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
-=======
-			<td style="padding-top: 4%">
-				<%@ include file="./mypageContent.jsp" %>
->>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 			</td>
 		</tr>
 			<!-- END Mypage -->

@@ -11,7 +11,6 @@
 
 
 
-<script type="text/javascript" src="<%=path.toString() %>js/jquery.min.js"></script>
 <script type="text/javascript" src="<%=path.toString() %>js/bootstrap.min.js"></script> 
 
 <!-- carousel -->
