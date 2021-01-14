@@ -4,21 +4,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>오늘 뭐 먹지?</title>
+<%@ include file="/common/bootstrap_common.jsp"%>
 </head>
 <body>
 <table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
+			<tr>
+			<%if(session.getAttribute("nick")!=null){ %>
+			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+				<%@ include file="/loginOkHeader.jsp"%>
+			</td>
+			<%}else{ %>
 			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/header.jsp"%>
 			</td>
+			<%} %>
+		</tr>
 		</tr>
 			<!-- END Header -->
 			
 			<!-- NavBar -->
 		<tr>
-			<td colspan="2" style="width: 100%;">
+			<td style="width: 100%;">
 				<%@ include file="/navbar.jsp" %>
 			</td>
 		</tr>
@@ -30,7 +39,7 @@
 		</tr>
 			<!-- Footer -->
 		<tr>
-			<td colspan="2" style="padding-top: 8%">
+			<td style="padding-top: 8%">
 				<%@ include file="/footer.jsp" %>
 			</td>
 		</tr>

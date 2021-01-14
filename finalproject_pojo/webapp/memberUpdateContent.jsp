@@ -19,7 +19,7 @@
 						<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
 					</td>
 					<td style="widows: 50%">
-						<input value="안준헌" type="text" name="name" id="name" style="float: left;">
+						<input value="안준헌" type="text" name="m_name" id="m_name" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">
@@ -27,9 +27,9 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">성별</p>
 					</td>
-					<td><label><input type="radio" name="gender"
+					<td><label><input type="radio" name="m_gender"
 							value="남자" checked="checked"> 남자</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<label><input type="radio" name="gender" value="여자">
+						<label><input type="radio" name="m_gender" value="여자">
 							여자</label></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -37,7 +37,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">아이디</p>
 					</td>
-					<td><input value="test123" type="text" name="id" id="id" style="float: left;">
+					<td><input value="test123" type="text" name="m_id" id="m_id" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">
@@ -45,7 +45,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">비밀번호</p>
 					</td>
-					<td><input value="1234" type="text" name="pw" id="pw"
+					<td><input value="1234" type="text" name="m_pw" id="m_pw"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -53,7 +53,15 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이메일</p>
 					</td>
-					<td><input value="test5678@gmail.com" type="email" name="email" id="email"
+					<td><input value="test5678@gmail.com" type="email" name="m_mail" id="m_mail"
+						style="float: left;"></td>
+				</tr>
+				<tr style="height: 80px;">
+					<td style="width: 50%; text-align: center;">
+						<p
+							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">주소</p>
+					</td>
+					<td><input value="서울특별시 금천구 가산동" type="text" name="m_zip" id="m_zip"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -61,7 +69,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">닉네임</p>
 					</td>
-					<td><input value="널포인터" type="text" name="nickname" id="nickname"
+					<td><input value="널포인터" type="text" name="m_mail" id="m_mail"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -69,7 +77,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">P.H</p>
 					</td>
-					<td><input value="01012345678" type="tel" name="phone" id="phone"
+					<td><input value="01012345678" type="tel" name="m_hp" id="m_hp"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -77,7 +85,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">생년월일</p>
 					</td>
-					<td><input value="1994-07-16" type="date" name="date" id="date"
+					<td><input value="1994-07-16" type="date" name="m_birth" id="m_birth"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 120px;">
