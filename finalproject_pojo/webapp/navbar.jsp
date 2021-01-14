@@ -6,12 +6,12 @@
 			<nav>
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
-							<a class="nav-link" href="/todayRecipe.jsp">
-								오늘의 추천 레시피
+							<a class="nav-link" href="/recommendation.jsp">
+								추천 레시피
 							</a>
 						</li>
 						<li class="nav-item" >
-							<a class="nav-link" href="/koreanList.jsp">
+							<a class="nav-link" href="/recipe.jsp">
 								레시피
 							</a>
 						</li>

@@ -20,6 +20,18 @@
 					</td>
 				</tr>
 				<tr>
+					<td>주력 요리:
+						<div class="easyui-panel" style="width: 20%; max-width: 400px;">
+						<select class="easyui-combobox" name="state"  style="width: 100%;">
+							<option value="AL">한식</option>
+							<option value="AK">중식</option>
+							<option value="AZ">일식</option>
+							<option value="AR">양식</option>
+						</select>
+						</div>
+					</td>
+				</tr>	
+				<tr>
 					<td>
 						ex) 지역, 주로 하시는 요리
 					</td>

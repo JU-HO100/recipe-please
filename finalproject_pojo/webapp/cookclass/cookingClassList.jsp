@@ -85,9 +85,15 @@ function gosubmit(){// c_classcd1 - 쿠킹클래스의 개수까지
 	<table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
+			<%if(session.getAttribute("nick")!=null){ %>
+			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+				<%@ include file="/loginOkHeader.jsp"%>
+			</td>
+			<%}else{ %>
 			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/header.jsp"%>
 			</td>
+			<%} %>
 		</tr>
 			<!-- END Header -->
 			

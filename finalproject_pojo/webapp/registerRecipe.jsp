@@ -1,176 +1,145 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<title>last demo</title>
+<script>
+<%! int  g_i = 1; %>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+// 대표이미지 파일 바로 보여주는 스크립트
+        $(function() {
+            $("#mainFile").on('change', function(){
+                
+                readURL(this);
+            });
+        });
+        
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+ 
+            reader.onload = function (e) {
+                    $('#mainImage').attr('src', e.target.result);
+                }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+// 조리법 이미지 파일 바로 보여주는 스크립트
+		
+        $(function() {
+            $("#file").on('change', function(){
+                
+                readURL2(this);
+            });
+        });
+        
+        function readURL2(input) {
+            if (input.files && input.files[0]) {
+            var reader2 = new FileReader();
+ 
+            reader2.onload = function (e) {
+                    $('#image').attr('src', e.target.result);
+                }
+              reader2.readAsDataURL(input.files[0]);
+            }
+        }
+
+//테이블 계속 추가하는 스크립트
+$(function() {
+	var num=0;
+	$("#add").on("click", function add() {
+		num++;
+		$("#list").append(
+				"<table>"
+		+	"							<tr>"
+		+	"								<td>"
+		+	"								조리법"+num+"  <textarea onkeyup='adjustHeight();'style='overflow: hidden;width:100%' placeholder='해당 순서의 조리법을 작성해주세요.'></textarea>"
+		+	"								</td>"
+		+	"							</tr>"
+		+	"							<tr>"
+		+	"								<td>"
+		+	"									조리법"+num+" 사진"
+		+  "								</td>"
+		+  "							</tr>"
+		+	"							<tr>"
+		+	"								<td>"
+		+  "									<input type='file' id='file' name='file' ><img id='image' alt='이미지를 선택해주세요.' width='150px' height='100px' >"
+		+	"								</td>"
+		+	"							</tr>"
+		+  "	</table>");
+	});
+});
+
+function ingredient() {
+    var left = Math.ceil((window.screen.width - 700)/2);
+    var top = Math.ceil((window.screen.height - 700)/2);
+	var url="./registerIngredient.jsp";
+	var name="재료등록";
+	var option = "width=700, height = 700, top="+top+", left="+left+", location=no"
+	window.open(url, name, option);
+}
+
+
+</script>
+<style>
+#myBtn {
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px solid black;
+  outline: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 8px;
+}
+</style>
 </head>
 <body>
-	<table align="center" style="width: 70%; height: 100%;">
-		<!-- Header -->
+	<table align="center" style="width: 70% ; height: 100%;">
+			<!-- Header -->
 		<tr>
-			<td colspan="2"
-				style="width: 100%; padding-top: 2%; padding-bottom: 2%;"><%@ include
-					file="./header.jsp"%></td>
+			<td style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+				<%@ include file="/header.jsp"%>
+			</td>
 		</tr>
-		<!-- END Header -->
-
-		<!-- NavBar -->
+			<!-- END Header -->
+			
+			<!-- NavBar -->
 		<tr>
-			<td colspan="2" style="width: 100%;"><%@ include
-					file="./navbar.jsp"%></td>
+			<td style="width: 100%;">
+				<%@ include file="/navbar.jsp" %>
+			</td>
 		</tr>
-		<!-- END NavBar -->
+			<!-- END NavBar -->
+			<!-- Content -->
+		<tr>
+			<td style="padding-top: 5%">
+				<%@include file="/registerRecipeContent.jsp" %>
+			</td>
+		</tr>
+			<!-- End Content -->	
+			<!-- Footer -->
+		<tr>
+			<td style="padding-top: 8%">
+				<%@ include file="/footer.jsp" %>
+			</td>
+		</tr>
+			<!-- End Footer -->
 	</table>
-	<div class="container">
-		<div class="card-header card-header-primary">
-			<h4 class="card-title">
-				<i class="fas fa-square"></i> 관리자 음식 등록 페이지
-			</h4>
-			<p class="card-catagory"></p>
-		</div>
-		<form action=""><!-- ###################################################### form 시작 -->
-			<table class="table">
-				<tr style="line-height: 32px;">
-					<td>음식이름</td>
-					<td><input type="text" name="food_name" class="form-control"
-						value=""></td>
-				</tr>
-				<tr>
-					<td>대표이미지</td>
-					<td>
-						<table class="table" style="width: 200px; height: 200px"
-							border="1px">
-							<tbody id="fileTableTbody">
-								<tr>
-									<td id="dropZone">사진을 드래그 하세요</td>
-								</tr>
-							</tbody>
-						</table>
-					</td>
-					<td>음식설명</td>
-					<td><input type="text" name="food_description"
-						class="form-control" value=""
-						style="width: 300px; height: 200px; font-size: 10px;"></td>
-				</tr>
-			</table>
-				<table border="1" style="width: 950px">
-					<tbody>
-						<tr name="trStaff">
-						</tr>
-					</tbody>
-				</table>
-			</form><!-- ###################################################### form 끝 -->
-			<button name="addStaff" onclick="arrPush()">재료 추가</button>
-			<form action=""><!-- ###################################################### form 시작 -->
-				<table border="1" style="width: 950px">
-					<tbody>
-						<tr name="trStep">
-						</tr>
-					</tbody>
-				</table>
-			</form><!-- ###################################################### form 끝 -->
-			<button name="addStep">Step 추가</button>
-		<h1>완성사진</h1>
-		<form action=""><!-- ###################################################### form 시작 -->
-			<table class="table" style="width: 200px; height: 200px" border="1px">
-				<tbody id="fileTableTbody">
-					<tr>
-						<td id="dropZone">사진을 드래그 하세요</td>
-					</tr>
-				</tbody>
-			</table>
-		</form><!-- ###################################################### form 끝 -->
-	<input type="submit" value="등록">
-	</div>
-	<script>
-		var arrNum = [];
-		var i = 0;
-		function arrPush() {
-			var addStaffText = '<tr name="trStaff">'
-					+ ' <td style="width:150px">재료'
-					+ '</td>                  '
-					+ ' <td style="width:800px">                                            '
-					+ '     <input type="text" name="staff_name" placeholder="재료이름">    '
-					+ '     <input type="text" name="staff_contact" placeholder="계량(숫자)">     '
-					+ '     <select name="staff_use_yn">                                    '
-					+ '         <option value="Y">계량단위</option>              '
-					+ '         <option value="Y">큰술(1큰술(1T,1Ts))</option>              '
-					+ '         <option value="N">작은술(1t,1ts)</option>                   '
-					+ '         <option value="N">컵(1Cup,1C)</option>                      '
-					+ '         <option value="N">종이컵(180ml)</option>                    '
-					+ '         <option value="N">oz(28.3g)</option>                        '
-					+ '         <option value="N">파운드(lb)</option>                       '
-					+ '         <option value="N">갤런(gallon 3.78L)</option>               '
-					+ '         <option value="N">꼬집</option>                             '
-					+ '         <option value="N">조금</option>                             '
-					+ '         <option value="N">적당량</option>                           '
-					+ '         <option value="N">줌</option>                               '
-					+ '         <option value="N">주먹(100g)</option>                       '
-					+ '         <option value="N">토막</option>                             '
-					+ '         <option value="N">톨(마늘)</option>                         '
-					+ '         <option value="N">쪽</option>                               '
-					+ '         <option value="N">톨(생강)</option>                         '
-					+ '         <option value="N">근(고기600g)</option>                     '
-					+ '         <option value="N">근(채소400g)</option>                     '
-					+ '         <option value="N">봉지(채소200g)</option>                   '
-					+ '     </select>                                                       '
-					+ '</td><td width="100"><button class="btn btn-default" name="delStaff">삭제</button>'
-					+ ' </td>	' + '</tr>';
-			var trHtml = $("tr[name=trStaff]:last"); //last를 사용하여 trStaff라는 명을 가진 마지막 태그 호출
-			trHtml.after(addStaffText); //마지막 trStaff명 뒤에 붙인다.
-		}
-		//삭제 버튼
-		$(document).on("click", "button[name=delStaff]", function() {
-
-			var trHtml = $(this).parent().parent();
-
-			trHtml.remove(); //tr 테그 삭제
-
-		});
-		//재료순서 step추가 버튼
-		$(document)
-				.on(
-						"click",
-						"button[name=addStep]",
-						function() {
-							var addStaffText = '<tr name="trStep" id="myTabletr">'
-									+ '	<td class="text-center">Step</td>                                       '
-									+ '	<td>                                                                '
-									+ '		<table class="table" style="width: 200px; height: 200px"        '
-									+'			border="1px">                                               '
-									+ '			<tbody id="fileTableTbody">                                 '
-									+ '				<tr>                                                    '
-									+ '					<td id="dropZone">사진을 드래그 하세요</td>         '
-									+ '				</tr>                                                   '
-									+ '			</tbody>                                                    '
-									+ '		</table>                                                        '
-									+ '	<td class="text-center">설명</td>                                                       '
-									+ '	<td><input type="text" name="food_description"                      '
-									+'		class="form-control" value=""                                   '
-									+'		style="width: 300px; height: 200px; font-size: 10px;"></td>			'
-									+ '<td width="100"><button class="btn btn-default" name="delStaff">삭제</button>			'
-									+ '</td>     															'
-									+ '		</tr>                                                           ';
-
-							var trHtml = $("tr[name=trStep]:last"); //last를 사용하여 trStaff라는 명을 가진 마지막 태그 호출
-
-							trHtml.after(addStaffText); //마지막 trStaff명 뒤에 붙인다.
-
-						});
-
-		//삭제 버튼
-		$(document).on("click", "button[name=delStep]", function() {
-
-			var trHtml = $(this).parent().parent();
-
-			trHtml.remove(); //tr 테그 삭제
-
-		});
-	</script>
-	</div>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </body>
 </html>

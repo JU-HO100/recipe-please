@@ -26,8 +26,8 @@
 						  <path fill-rule="evenodd"d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
 						</svg>
 				</button>
-			</form>
-		</td>
+				</form>
+			</td>
 			<td style="width: 12%;  padding-top: 15px; text-align: right">
 				<a href="/member/login.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
 					로그인

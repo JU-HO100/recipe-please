@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -23,7 +24,10 @@ public class MemberController implements Action{
 	Logger logger = Logger.getLogger(MemberController.class);
 
 	public ModelAndView execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		HttpSession session = req.getSession(true);
+		
 		ModelAndView mav = new ModelAndView(req, res);
+		
 		PrintWriter out = res.getWriter();
 		String pageName = (String)req.getAttribute("pageName");//memberList
 		MemberDao memDao = MemberDao.getInstance();
@@ -38,12 +42,22 @@ public class MemberController implements Action{
 		
 		logger.info("MemC map>>>>>>"+pmap);
 		
-		if(pageName.equals("memLogin")) {//로그인
-			pageName = "loginIndex";
-			List<Map<String, Object>> list = memDao.Login(pmap);
-			logger.info("MemberC - nick, id list or msg"+list);
-			mav.addObject("list", list);
-		}
+	      if(pageName.equals("memLogin")) {//로그인
+	          List<Map<String, Object>> list = memDao.Login(pmap);
+	          logger.info("MemberC - nick, id list or msg"+list);
+	          for(Map<String,Object> map:list) {
+	             if(map.get("MSG") == null) {
+	                session.setAttribute("id", map.get("M_ID"));
+	                session.setAttribute("nick", map.get("M_NICK"));
+	                session.setMaxInactiveInterval(300);//세션유지시간 30분
+	                pageName="index"; // 로그인 됐을때 보낼 페이지
+	             }
+	             else {
+	     			mav.addObject("msg", map.get("MSG"));
+	            	 //pageName="/index";//로그인 안됐을때 보낼 페이지
+	             }
+	          }
+	       }
 		else if(pageName.equals("memRegi")) {//회원가입
 			pageName = "index";
 			pmap.put("field","REGISTER");//회원가입 필드 설정

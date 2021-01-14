@@ -85,9 +85,15 @@
 	<table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
-			<td style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+			<%if(session.getAttribute("nick")!=null){ %>
+			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+				<%@ include file="/loginOkHeader.jsp"%>
+			</td>
+			<%}else{ %>
+			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/header.jsp"%>
 			</td>
+			<%} %>
 		</tr>
 			<!-- END Header -->
 			
@@ -101,12 +107,8 @@
 			
 			<!-- Content -->
 		<tr>
-			<td style="padding-top: 4%" id="tb_ajax">
-				<% if(ranking.equals("0")){ %>
+			<td style="padding-top: 4%" id="tb_ajax"  >
 				<%@ include file="/rankingChefContent.jsp" %>
-				<%}else{ %>
-				<%@ include file="/rankingRecipeContent.jsp" %>
-				<%} %>
 			</td>
 		</tr>			
 			<!-- Content -->
