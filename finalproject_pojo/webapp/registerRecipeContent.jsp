@@ -8,7 +8,7 @@
 			    <div class="input-group-prepend">
 			      <span class="input-group-text">제목</span>
 			    </div>
-			    <input type="text" class="form-control" placeholder="어떤요리인지 알 수 있도록 작성해주세요." >
+			    <input type="text" id="title" name="title" class="form-control" placeholder="어떤요리인지 알 수 있도록 작성해주세요." >
 			  </div>
 		</td>
 	</tr>

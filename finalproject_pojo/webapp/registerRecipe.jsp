@@ -90,6 +90,50 @@ function ingredient() {
 }
 
 
+function gosubmit() {
+	/**
+	 * 문자열의 바이트수 리턴
+	 * @returns {Number}
+	 */
+	String.prototype.byteLength = function() {
+	    var l= 0;
+	     
+	    for(var idx=0; idx < this.length; idx++) {
+	        var c = escape(this.charAt(idx));
+	         
+	        if( c.length==1 ) l ++;
+	        else if( c.indexOf("%u")!=-1 ) l += 2;
+	        else if( c.indexOf("%")!=-1 ) l += c.length/3;
+	    }
+	     
+	    return l;
+	};
+
+	//title byte 확인
+	 if(title.byteLength() <4 ){
+	      alert("제목을 4byte 이상 사이즈로 작성해주세요");
+	      $("#title").focus();
+	      return false;
+	    }
+	//본문 byte 확인
+// 	 if(title.byteLength() <4 ){
+// 	      alert("아이디를4byte 이상 사이즈로 작성해주세요");
+// 	      $("#title").focus();
+// 	      return false;
+	    }
+	//재료량 byte 확인
+// 	 if(title.byteLength() <4 ){
+// 	      alert("아이디를4byte 이상 사이즈로 작성해주세요");
+// 	      $("#title").focus();
+// 	      return false;
+	    }
+	//해시태그 byte 확인
+// 	 if(title.byteLength() <4 ){
+// 	      alert("아이디를4byte 이상 사이즈로 작성해주세요");
+// 	      $("#title").focus();
+// 	      return false;
+	    }
+}
 </script>
 <style>
 #myBtn {

@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import = "java.util.*" %>
+<% List<Map<String, Object>> list = (List<Map<String, Object>>)request.getAttribute("list");%>
+<% for(Map<String, Object> rmap:list) { %>
 <table style="width: 100%">
 	<tr>
-		<td style="width: 20%; vertical-align: top;">
-			<div class="btn-group-vertical" style="width: 100%;">
-				 <button type="button" class="btn btn-outline-dark active" style="text-align: left;" onclick="memberUpdateContent()">회원정보 수정</button>
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="cookingClassCheckContent()">쿠킹클래스 확인</button>
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="joinChefContent()">셰프 등록</button>
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="memberOutContent()">회원 탈퇴</button>
-			</div>
-		</td>
-		<td style="width: 80%">
+		<td style="width: 79%">
 			<form method="get" action="#">
 			<table align="left" style="width: 70%">
 				<tr style="height: 80px;">
@@ -19,7 +14,7 @@
 						<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
 					</td>
 					<td style="widows: 50%">
-						<input value="안준헌" type="text" name="m_name" id="m_name" style="float: left;">
+						<input value="<%=rmap.get("M_NAME") %>" type="text" name="m_name" id="m_name" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">
@@ -37,7 +32,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">아이디</p>
 					</td>
-					<td><input value="test123" type="text" name="m_id" id="m_id" style="float: left;">
+					<td><input value="<%=rmap.get("M_ID") %>" type="text" name="m_id" id="m_id" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">
@@ -45,7 +40,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">비밀번호</p>
 					</td>
-					<td><input value="1234" type="text" name="m_pw" id="m_pw"
+					<td><input value="<%=rmap.get("M_PW") %>" type="text" name="m_pw" id="m_pw"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -53,7 +48,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이메일</p>
 					</td>
-					<td><input value="test5678@gmail.com" type="email" name="m_mail" id="m_mail"
+					<td><input value="<%=rmap.get("M_MAIL") %>" type="email" name="m_mail" id="m_mail"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -61,7 +56,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">주소</p>
 					</td>
-					<td><input value="서울특별시 금천구 가산동" type="text" name="m_zip" id="m_zip"
+					<td><input value="<%=rmap.get("M_ZIP") %>" type="text" name="m_zip" id="m_zip"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -69,7 +64,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">닉네임</p>
 					</td>
-					<td><input value="널포인터" type="text" name="m_mail" id="m_mail"
+					<td><input value="<%=rmap.get("M_NICK") %>" type="text" name="m_nick" id="m_nick"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -77,7 +72,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">P.H</p>
 					</td>
-					<td><input value="01012345678" type="tel" name="m_hp" id="m_hp"
+					<td><input value="<%=rmap.get("M_HP") %>" type="tel" name="m_hp" id="m_hp"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 80px;">
@@ -85,7 +80,7 @@
 						<p
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">생년월일</p>
 					</td>
-					<td><input value="1994-07-16" type="date" name="m_birth" id="m_birth"
+					<td><input value="<%=rmap.get("M_BIRTH") %>" type="date" name="m_birth" id="m_birth"
 						style="float: left;"></td>
 				</tr>
 				<tr style="height: 120px;">
@@ -99,3 +94,4 @@
 		</td>
 	</tr>
 </table>
+ <%}%>

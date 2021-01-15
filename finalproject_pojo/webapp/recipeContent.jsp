@@ -17,7 +17,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="./images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
+					<img src="/images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
 					<p style="float: left;">12</p>
 				</td>
 				<td>
@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="./images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
+					<img src="/images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
 					<p style="float: left;">12</p>
 				</td>
 				<td>
@@ -69,7 +69,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="./images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
+					<img src="/images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
 					<p style="float: left;">12</p>
 				</td>
 				<td>
@@ -95,7 +95,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="./images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
+					<img src="/images/likeOn.png" style="width: 25px; float: left; margin-right: 2px; ">
 					<p style="float: left;">12</p>
 				</td>
 				<td>

@@ -53,8 +53,10 @@ public class MemberController implements Action{
 	                pageName="index"; // 로그인 됐을때 보낼 페이지
 	             }
 	             else {
+	            	 logger.info("--------MSG가 존재할때----");
 	     			mav.addObject("msg", map.get("MSG"));
-	            	 //pageName="/index";//로그인 안됐을때 보낼 페이지
+	     			logger.info("msg>>>>"+map.get("MSG"));
+	            	pageName="login";//로그인 안됐을때 보낼 페이지
 	             }
 	          }
 	       }
@@ -97,6 +99,7 @@ public class MemberController implements Action{
 		}
 		//new
 		else if(pageName.equals("myPage")) {//마이페이지
+			pageName="memberUpdateContentSelect";
 			pmap.put("field","MY_PAGE");
 			List<Map<String, Object>> list =memDao.myPage(pmap);
 			logger.info("MemberC - myPage >>>> "+list);
@@ -157,11 +160,13 @@ public class MemberController implements Action{
 		}
 		//new
 		else if(pageName.equals("chefRanking")) {//셰프들의 랭킹
+			pageName="rankingChefContentList";
 			pmap.put("field","CHEF_RANKING");
 			pmap.put("m_id","");
 			List<Map<String, Object>> list =memDao.chefDetail(pmap);
 			logger.info("MemberC -  chefRanking >>>> "+list);
-			mav.addObject("list", list);
+			g = new Gson();
+			forJson = g.toJson(list);
 		}
 		//new
 		else if(pageName.equals("chefBoard")) {//셰프 클릭했을때 해당 셰프의 게시글 보여줌

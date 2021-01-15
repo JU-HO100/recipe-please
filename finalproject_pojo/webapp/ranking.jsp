@@ -108,7 +108,26 @@
 			<!-- Content -->
 		<tr>
 			<td style="padding-top: 4%" id="tb_ajax"  >
-				<%@ include file="/rankingChefContent.jsp" %>
+				<script type="text/javascript">
+				$.ajax({
+				      type : "GET",
+				      url : "/member/chefRanking.np",
+				      dataType : "json",
+				      success : function(data) {
+				    	 	var result = JSON.stringify(data);
+						  	var arr = JSON.parse(result);
+						  	
+						 	for(var i=0;i<arr.length;i++){
+						 		if(arr[i].MSG == null){//값을 불러옴
+						 			$("#m_name").textbox('setValue',arr[i].M_NAME);
+								}else{
+									 alert('통신실패!!');
+								}
+						 	}
+				    }
+			});
+				</script>
+				<%@ include file="/member/rankingChefContentList.jsp" %>
 			</td>
 		</tr>			
 			<!-- Content -->

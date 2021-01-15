@@ -3,17 +3,9 @@
 <!DOCTYPE html>
 <table style="width: 100%">
 	<tr>
-		<td style="width: 20%; vertical-align: top;">
-			<div class="btn-group-vertical" style="width: 100%;">
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="memberUpdateContent()">회원정보 수정</button>
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="cookingClassCheckContent()">쿠킹클래스 확인</button>
-				 <button type="button" class="btn btn-outline-dark active" style="text-align: left;" onclick="joinChefContent()">셰프 등록</button>
-				 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="memberOutContent()">회원 탈퇴</button>
-			</div>
-		</td>
-		<td style="width: 80%; padding-left: 5%; ">
+		<td style="width: 79%">
 			<form method="get" action="#">
-			<table style="width: 100%; min-height: 100%;margin-bottom: 10%">
+			<table align="center" style="width: 70%; ">
 				<tr style="height: 50px;">
 					<td>
 						자기소개서
@@ -38,13 +30,13 @@
 				</tr>
 				<tr>
 					<td style="margin-top: 4%">
-						<textarea rows="20" cols="100"></textarea>
+						<textarea rows="8" cols="70" id="self" name="self"></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td style="text-align: right;">
 						<input class="btn btn-outline-dark" type="reset" value="다시 작성">
-						<input class="btn btn-outline-dark" type="submit" value="등록">
+						<input class="btn btn-outline-dark" type="button" value="등록" onclick="joinChefCheck()">
 					</td>
 				</tr>	
 			</table>	
