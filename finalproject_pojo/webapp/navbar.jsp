@@ -11,7 +11,7 @@
 							</a>
 						</li>
 						<li class="nav-item" >
-							<a class="nav-link" href="/recipe.jsp">
+							<a class="nav-link" href="/recipe/recipe.jsp">
 								레시피
 							</a>
 						</li>

@@ -20,7 +20,7 @@
 			<table>
 				<tr>
 					<td>
-						<h1 style="font-family: 'Sunflower', sans-serif;">이건 별로지?</h1>
+						<h1 style="font-family: 'Sunflower', sans-serif;">이건 별로니?</h1>
 					</td>
 				</tr>
 				<tr>

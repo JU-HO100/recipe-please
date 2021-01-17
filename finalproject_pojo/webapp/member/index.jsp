@@ -17,11 +17,7 @@ function topFunction() {
 }
 
 function logout() {
-		sessionStorage.clear();
-		//session.removeAttribute(session.getAttribute("nick"));
-		//session.invalidate();
-		//location.href="javascript:history.go(-1)";
-		history.go(0);
+		location.href="logout.jsp";
 }
 </script>
 <style>

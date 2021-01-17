@@ -10,8 +10,18 @@
 				</a>
 			</td>
 			<td style="width: 45%; text-align: center;">
-				<form class="form-inline">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" style="width: 80%">
+				<form class="form-inline" action="#" method="get">
+				<div class="easyui-panel" style="width: 20%; max-width: 400px;">
+						<select class="easyui-combobox" name="state"  style="width: 100%;">
+							<option value="AL">제목</option>
+							<option value="AK">내용</option>
+							<option value="AZ">재료명</option>
+							<option value="AR">닉네임</option>
+							<option value="AR">분류</option>
+							<option value="AR">소분류</option>
+						</select>
+				</div>
+					<input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" style="width: 55%">
 					<button type="button" class="btn btn-secondary">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
 							  <path fill-rule="evenodd"d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -24,7 +34,7 @@
 				<p style="font-family: Black Han Sans, sans-serif; color: black;"><%=nick%>님 환영합니다</p>
 			</td>
 			<td style="width: 8%;  padding-top: 15px; text-align: right">
-				<a href="/member/mypage.jsp?mypage=0" style="font-family: Black Han Sans, sans-serif; color: black;">
+				<a href="/member/mypage.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
 					마이페이지
 				</a>
 				&nbsp;&nbsp;&nbsp;

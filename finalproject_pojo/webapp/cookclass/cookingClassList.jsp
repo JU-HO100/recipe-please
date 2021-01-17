@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <% String MSG = (String)request.getAttribute("msg"); %>
+<% String id = (String)session.getAttribute("id"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,24 +11,32 @@
 <title>오늘 뭐 먹지?</title>
 <script type="text/javascript">
 function cookingClassSignUpContent(){
-    $.ajax({
-      type : "GET",
-      url : "/cookclass/showClass.np?m_id=test123",
-      dataType : "text",
-      error : function() {
-        alert('통신실패!!');
-      },
-      success : function(data) {
-        $('#tb_ajax').html(data);
-      }
-
-    });
+	$.ajax({
+	      type : "GET",
+	      url : "/cookclass/showClass.np?m_id="+"<%=id%>",
+	      dataType : "json",
+	      success : function(data) {
+	    	 	var result = JSON.stringify(data);
+			  	var arr = JSON.parse(result);
+			 	for(var i=0;i<arr.length;i++){
+			 		if(arr[i].MSG == null){//값을 불러옴
+			 			$("#c_cook").textbox('setValue',arr[i].C_COOK);
+			 			$("#c_date").textbox('setValue',arr[i].C_DATE);
+			 			$("#c_ingredients").textbox('setValue',arr[i].C_INGREDIENTS);
+			 			$("#c_zip").textbox('setValue',arr[i].C_ZIP);
+			 			$("#c_member").textbox('setValue',arr[i].C_MEMBER);
+					}else{
+						 alert('통신실패!!');
+					}
+			 	}
+	    }
+});
   }
 function cookingClassRegisterContent(){
     $.ajax({
       type : "GET",
       url : "../cookingClassRegisterContent.jsp",
-      dataType : "text",
+      dataType : "html",
       error : function() {
         alert('통신실패!!');
       },
@@ -118,17 +127,26 @@ function gosubmit(){// c_classcd1 - 쿠킹클래스의 개수까지
 					<script type="text/javascript">
 					$.ajax({
 					      type : "GET",
-					      url : "/cookclass/showClass.np?m_id=choihoyeon30",
-					      dataType : "text",
-					      error : function() {
-					        alert('통신실패!!');
-					      },
+					      url : "/cookclass/showClass.np?m_id="+"<%=id%>",
+					      dataType : "json",
 					      success : function(data) {
-					        $('#tb_ajax').html(data);
-					      }
-
-					    });
+					    	 	var result = JSON.stringify(data);
+							  	var arr = JSON.parse(result);
+							 	for(var i=0;i<arr.length;i++){
+							 		if(arr[i].MSG == null){//값을 불러옴
+							 			$("#c_cook").textbox('setValue',arr[i].C_COOK);
+							 			$("#c_date").textbox('setValue',arr[i].C_DATE);
+							 			$("#c_ingredients").textbox('setValue',arr[i].C_INGREDIENTS);
+							 			$("#c_zip").textbox('setValue',arr[i].C_ZIP);
+							 			$("#c_member").textbox('setValue',arr[i].C_MEMBER);
+									}else{
+										 alert('통신실패!!');
+									}
+							 	}
+					    }
+				});
 					</script>
+					<%@ include file="/cookclass/cookingClassSignUpContentList.jsp"%>
 				</div>
 			</td>
 		</tr>

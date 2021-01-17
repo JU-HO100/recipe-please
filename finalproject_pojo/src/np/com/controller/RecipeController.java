@@ -56,7 +56,8 @@ public class RecipeController implements Action{
 			pmap.put("menucd","");
 			List<Map<String, Object>> list = recipeDao.boardView(pmap);
 			logger.info("RecipeC - recipeList >>>> "+list);
-			mav.addObject("list", list);
+	        g = new Gson();
+	        forJson = g.toJson(list);
 		}
 		//new
 		else if(pageName.equals("popRecipeList")) {	//인기 게시글 목록

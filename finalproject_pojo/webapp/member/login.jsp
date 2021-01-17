@@ -45,7 +45,7 @@ function findPwAction() {
 	</tr>
 	<tr>
 		<td align="center" style="padding-bottom: 8%">
-			<%@ include file="/kakaoLogin.jsp" %>
+<%-- 			<%@ include file="/kakaoLogin.jsp" %> --%>
 		</td>		
 	</tr>
 	<tr>

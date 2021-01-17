@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<form method="get"  name="loginForm" action="/member/memRegi.np" >
+<form method="post"  name="loginForm" action="/member/memRegi.np" >
 <table align="center"  style="width: 70%">
 	<tr style="height:80px; ">
 		<td style="width: 50%; text-align: center; ">

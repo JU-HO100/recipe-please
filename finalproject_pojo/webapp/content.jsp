@@ -24,13 +24,6 @@
 	</table>
   <table class="table table-hover">
     <tbody>
-<!--       <tr style="cursor: pointer;"> -->
-<!--       	<td style="width: 30%"> -->
-<!--       		<input type="image" src="/images/food.jpg" style="width: 100%"> -->
-<!--       	</td> -->
-<!--         <td style="width: 55%">요리1</td> -->
-<!--         <td style="width: 15%">셰프1</td> -->
-<!--       </tr> -->
 <%
 			for(int i=0;i<4;i++){
 			//Map<String,Object> rmap = boardList.get(i);
