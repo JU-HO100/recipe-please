@@ -50,7 +50,11 @@ public class MemberController implements Action{
 		else if(pageName.equals("memberList")) {
 			adMemDao.memList(memberVO);
 		}
+<<<<<<< HEAD
+		
+=======
 		//member/memeberList.sp
+>>>>>>> f210c8f63c04a3bc0e4001340d38556fcc059b76
 		mav.setViewName(pageName+".jsp");
 		
 		return mav;
