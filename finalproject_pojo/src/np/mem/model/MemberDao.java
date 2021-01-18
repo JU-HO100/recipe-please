@@ -29,7 +29,11 @@ public class MemberDao {
 		try {
 			// 물음표에 매개변수로 전달된 데이터 매핑
 			memVO.setField("REGISTER");
+<<<<<<< HEAD
 			session.selectOne(NAMESPACE+"proc_Reg",memVO);
+=======
+			session.selectOne(NAMESPACE+"proc_Regi",memVO);
+>>>>>>> f210c8f63c04a3bc0e4001340d38556fcc059b76
 			regiMsg = memVO.getMsg();
 			logger.info(regiMsg);
 			session.commit();

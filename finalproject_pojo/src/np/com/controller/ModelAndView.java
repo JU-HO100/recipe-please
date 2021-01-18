@@ -22,6 +22,10 @@ public class ModelAndView {
 		this.response = response;
 	}
 
+<<<<<<< HEAD
+=======
+	//member/memberlList.sp
+>>>>>>> f210c8f63c04a3bc0e4001340d38556fcc059b76
 	public void setViewName(String viewName) {//응답페이지로 나갈 페이지 이름 결정하기
 		logger.info("viewName : "+viewName);		
 		String strTemp="";
@@ -41,6 +45,11 @@ public class ModelAndView {
 		
 		///////////////////////[[ 응답 페이지 처리 관련 ]]/////////////////////////////
 		
+<<<<<<< HEAD
+=======
+		
+		
+>>>>>>> f210c8f63c04a3bc0e4001340d38556fcc059b76
 		try {
 			if(strTemp.indexOf("select") >=0 || strTemp.indexOf("list")>=0) {							//문자열중에 select 나 list 가 있으면 포워드
 				RequestDispatcher view = request.getRequestDispatcher(viewName);
