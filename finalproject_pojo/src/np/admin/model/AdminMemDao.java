@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+
 import org.apache.ibatis.session.SqlSessionFactory;
+
 import org.apache.log4j.Logger;
 
 import np.com.util.MyBatisCommonFactory;
@@ -16,12 +18,17 @@ import np.com.vo.ResumeVO;
 public class AdminMemDao {
 	Logger logger = Logger.getLogger(AdminMemDao.class);
 	private static final String NAMESPACE = "np.admin.mybatis.AdMemberMapper.";
+
 	private SqlSessionFactory sqlMapper = null;
+
+	private SqlSession session = null;
+
 	
 	// 싱글톤
 	private static AdminMemDao instanceDao = new AdminMemDao();
 	private AdminMemDao() {
 		sqlMapper = MyBatisCommonFactory.getSqlSessionFactory();
+		session = MyBatisCommonFactory.getSqlSession();  
 	}
 	public static AdminMemDao getInstance() {
 		return instanceDao;
@@ -33,6 +40,8 @@ public class AdminMemDao {
 		List<MemberVO> memList = null;
 		try {
 			session = sqlMapper.openSession();
+		List<MemberVO> memList = null;
+		try {
 			memVO.setField("MEMBER_NAME");
 			// 물음표에 매개변수로 전달된 데이터 매핑
 			session.selectOne(NAMESPACE+"proc_admin_memlist",memVO);
@@ -52,6 +61,8 @@ public class AdminMemDao {
 		String updateMsg=null;
 		try {
 			session = sqlMapper.openSession();
+		String updateMsg=null;
+		try {
 			session.update(NAMESPACE+"proc_updateChef",memVO);
 			updateMsg =  memVO.getMsg();
 			logger.info(updateMsg);
@@ -70,6 +81,8 @@ public class AdminMemDao {
 		String deleteMsg=null;
 		try {
 			session = sqlMapper.openSession();
+		String deleteMsg=null;
+		try {
 			session.delete(NAMESPACE+"proc_withDraw",memVO);
 			deleteMsg = memVO.getMsg();
 			logger.info(deleteMsg);
@@ -89,6 +102,8 @@ public class AdminMemDao {
 		String msg=null;
 		try {
 			session = sqlMapper.openSession();
+		String msg=null;
+		try {
 			// 물음표에 매개변수로 전달된 데이터 매핑
 			session.selectOne(NAMESPACE+"proc_resume",resumeVO);
 			msg = resumeVO.getMsg();

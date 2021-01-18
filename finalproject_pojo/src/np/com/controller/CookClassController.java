@@ -1,9 +1,9 @@
 package np.com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -18,6 +18,9 @@ import np.com.util.HashMapBinder;
 import np.mem.model.CookClassDao;
 
 //cookclass/*.np
+import np.com.util.HashMapBinder;
+import np.mem.model.CookClassDao;
+
 public class CookClassController implements Action{
 	Logger logger = Logger.getLogger(CookClassController.class);
 
@@ -28,6 +31,9 @@ public class CookClassController implements Action{
 		CookClassDao cookClassDao = CookClassDao.getInstance();
 		
 		Gson g = null;
+		String pageName = (String)req.getAttribute("pageName");//memberList
+		CookClassDao cookClassDao = CookClassDao.getInstance();
+		
 	    Map<String,Object> pmap = new HashMap<>();
 		HashMapBinder hmb = new HashMapBinder(req);
 		hmb.bind(pmap);
@@ -99,6 +105,15 @@ public class CookClassController implements Action{
 			res.setContentType("application/json; charset=utf-8");
 			out.print(forJson);
 		}
+		
+		if(pageName.equals("")) {
+		}
+		else if(pageName.equals("")) {
+		}
+		else if(pageName.equals("")) {
+		}
+		
+		mav.setViewName(pageName+".jsp");
 		
 		return mav;
 	}

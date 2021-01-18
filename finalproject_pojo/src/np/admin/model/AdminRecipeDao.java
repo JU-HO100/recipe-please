@@ -12,11 +12,13 @@ public class AdminRecipeDao {
 	Logger logger = Logger.getLogger(AdminRecipeDao.class);
 	private static final String NAMESPACE = "np.admin.mybatis.AdRecipeMapper.";
 	private SqlSessionFactory sqlMapper = null;
+	private SqlSession session = null;
 	
 	// 싱글톤
 	private static AdminRecipeDao instanceDao = new AdminRecipeDao();
 	private AdminRecipeDao() {
 		sqlMapper = MyBatisCommonFactory.getSqlSessionFactory();
+		session = MyBatisCommonFactory.getSqlSession();  
 	}
 	public static AdminRecipeDao getInstance() {
 		return instanceDao;

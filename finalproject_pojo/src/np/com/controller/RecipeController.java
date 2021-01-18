@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,9 @@ import np.com.util.HashMapBinder;
 import np.mem.model.RecipeDao;
 
 //recipe/*.np
+import np.com.util.HashMapBinder;
+import np.mem.model.RecipeDao;
+
 public class RecipeController implements Action{
 	Logger logger = Logger.getLogger(RecipeController.class);
 
@@ -28,6 +32,9 @@ public class RecipeController implements Action{
 		RecipeDao recipeDao = RecipeDao.getInstance();
 		
 		Gson g = null;
+		String pageName = (String)req.getAttribute("pageName");//memberList
+		RecipeDao recipeDao = RecipeDao.getInstance();
+		
 	    Map<String,Object> pmap = new HashMap<>();
 		HashMapBinder hmb = new HashMapBinder(req);
 		hmb.bind(pmap);
@@ -121,6 +128,15 @@ public class RecipeController implements Action{
 			res.setContentType("application/json; charset=utf-8");
 			out.print(forJson);
 		}
+		
+		if(pageName.equals("")) {
+		}
+		else if(pageName.equals("")) {
+		}
+		else if(pageName.equals("")) {
+		}
+		
+		mav.setViewName(pageName+".jsp");
 		
 		return mav;
 	}

@@ -1,6 +1,10 @@
 package np.admin.model;
 
+
 import org.apache.ibatis.session.SqlSessionFactory;
+
+import org.apache.ibatis.session.SqlSession;
+
 import org.apache.log4j.Logger;
 
 import np.com.util.MyBatisCommonFactory;
@@ -9,12 +13,20 @@ import np.com.util.MyBatisCommonFactory;
 public class AdminCookClassDao {
 	Logger logger = Logger.getLogger(AdminCookClassDao.class);
 	private static final String NAMESPACE = "np.admin.mybatis.AdCookClassMapper.";
+
 	private SqlSessionFactory sqlMapper = null;
+
+	private SqlSession session = null;
+
 	
 	// 싱글톤
 	private static AdminCookClassDao instanceDao = new AdminCookClassDao();
 	private AdminCookClassDao() {
+
 		sqlMapper = MyBatisCommonFactory.getSqlSessionFactory();
+
+		session = MyBatisCommonFactory.getSqlSession();  
+
 	}
 	public static AdminCookClassDao getInstance() {
 		return instanceDao;
