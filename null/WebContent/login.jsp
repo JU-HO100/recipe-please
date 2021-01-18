@@ -68,9 +68,11 @@ export default {
 		</td>	
 	</tr>
 	<tr>
-		<td align="center" style="padding-bottom: 8%">
-			<%@ include file="./kakaoLogin.jsp" %>
-		</td>		
+		<td align="center">
+			<%@ include file="/kakaoLogin.jsp" %>
+			<br>
+			<%@ include file="/naverLogin.jsp" %>
+		</td>
 	</tr>
 	<tr>
 		<td>
