@@ -5,6 +5,64 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/common/bootstrap_common.jsp"%>
+<script type="text/javascript">
+function memberUpdateContent(){
+    $.ajax({
+      type : "GET",
+      url : "./memberUpdateContent.jsp",
+      dataType : "text",
+      error : function() {
+        alert('통신실패!!');
+      },
+      success : function(data) {
+        $('#tb_ajax').html(data);
+      }
+
+    });
+  }
+function cookingClassCheckContent(){
+    $.ajax({
+      type : "GET",
+      url : "./cookingClassCheckContent.jsp",
+      dataType : "text",
+      error : function() {
+        alert('통신실패!!');
+      },
+      success : function(data) {
+        $('#tb_ajax').html(data);
+      }
+
+    });
+  }
+function joinChefContent(){
+    $.ajax({
+      type : "GET",
+      url : "./joinChefContent.jsp",
+      dataType : "text",
+      error : function() {
+        alert('통신실패!!');
+      },
+      success : function(data) {
+        $('#tb_ajax').html(data);
+      }
+
+    });
+  }
+function memberOutContent(){
+    $.ajax({
+      type : "GET",
+      url : "./memberOutContent.jsp",
+      dataType : "text",
+      error : function() {
+        alert('통신실패!!');
+      },
+      success : function(data) {
+        $('#tb_ajax').html(data);
+      }
+
+    });
+  }
+</script>
 <title>오늘 뭐 먹지?</title>
 </head>
 <body>
@@ -27,8 +85,8 @@
 			
 			<!-- END Mypage -->
 		<tr>
-			<td style="padding-top: 4%">
-				<%@ include file="./mypageContent.jsp" %>
+			<td style="padding-top: 4%" id="tb_ajax">
+				<%@ include file="./memberUpdateContent.jsp" %>
 			</td>
 		</tr>
 			<!-- END Mypage -->

@@ -7,7 +7,7 @@
 			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
 		</td>
 		<td style="widows: 50%">
-			<input type="text" name="M_NAME" id="M_NAME" style="float: left;" required="required">
+			<input value="안준헌" type="text" name="M_NAME" id="M_NAME" style="float: left;" required="required">
 		</td>
 	</tr>
 	<tr style="height:80px; ">
@@ -15,7 +15,7 @@
 			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">생년월일</p>
 		</td>
 		<td>
-			<input type="date" name="M_BIRTH" id="M_BIRTH" style="float: left;" required="required">
+			<input value="1994-07-16" type="date" name="M_BIRTH" id="M_BIRTH" style="float: left;" required="required">
 		</td>
 	</tr>
 	<tr style="height:120px; ">

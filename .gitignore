@@ -1,5 +1,13 @@
 .DS_Store
 *.log
+<<<<<<< HEAD
+<<<<<<< HEAD
+*.iml
+*.xml
+temp/
+=======
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
 *.xml
 temt/
 # Directories #
@@ -32,3 +40,7 @@ tmp/**/*
 *.bak
 local.properties
 /src/main/resources/rebel.xml
+<<<<<<< HEAD
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a
+=======
+>>>>>>> 5a6972c0b348fbc5b3e746362c4f59b92d6e482a

@@ -6,7 +6,7 @@
   				 <h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px;">인기 셰프</h1>
   			</td>
   			<td style="text-align: right; padding-top: 20px;">
-  				<a href="./ranking.jsp" style="font-family: 'Nanum Pen Script', cursive; font-size: 20px; color: black;">더보기</a>
+  				<a href="./ranking.jsp?ranking=0" style="font-family: 'Nanum Pen Script', cursive; font-size: 20px; color: black;">더보기</a>
   			</td>
   		</tr>
 	</table>
@@ -24,50 +24,32 @@
 				<div class="carousel-inner" style="height: 300px;">
 					<div class="carousel-item active">
 						<div style="margin-left: 140px;">
+						<%
+							for(int i=0;i<5;i++){
+							//Map<String,Object> rmap = boardList.get(i);
+						%>
 						<div style="float: left;">
 							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
 							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
 						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
+						<%
+								}
+						%>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div style="margin-left: 140px;">
+						<%
+							for(int i=0;i<5;i++){
+							//Map<String,Object> rmap = boardList.get(i);
+						%>
 						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
+							<img src="./images/chef2.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
 							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
 						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
-						<div style="float: left;">
-							<img src="./images/chef.png" style="width:150px; border-radius: 50%; border: solid 1px black; margin: 30px;">
-							<h2 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px; text-align: center">*** 셰프님</h2>
-						</div>
+						<%
+								}
+						%>
 					</div>
 					</div>
 				</div>

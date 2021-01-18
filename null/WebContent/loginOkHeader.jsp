@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String name = request.getParameter("name");	
+%>    
 	<table style="width: 100%;">
 		<tr>
 			<td style="width: 30%; text-align: center;">
@@ -19,18 +22,21 @@
 			</form>
 		</td>
 			<td style="width: 12%;  padding-top: 32px; text-align: right;">
-				<p style="font-family: Black Han Sans, sans-serif; color: black;">안준헌님 환영합니다</p>
+				<p style="font-family: Black Han Sans, sans-serif; color: black;"><%=name%>님 환영합니다</p>
 			</td>
 			<td style="width: 8%;  padding-top: 15px; text-align: right">
 				<a href="./mypage.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
 					마이페이지
+					
 				</a>
 				&nbsp;&nbsp;&nbsp;
 			</td>
 			<td style="width: 8%; padding-top: 15px; padding-left:5px; text-align: left; ">
-				<a href="./index.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
-					로그아웃
-				</a>
+<!-- 				<a href="./index.jsp" style="font-family: Black Han Sans, sans-serif; color: black;"> -->
+<!-- 					로그아웃 -->
+<!-- 				</a> -->
+			<button id="kakaoLogout" onclick="kakaoLogout()">로그아웃</button>
 			</td>
 		</tr>
 	</table>
+	<input id="userinfo" value="" type="hidden"/> <!-- 유저정보를 저장할 input 엘리먼트 -->

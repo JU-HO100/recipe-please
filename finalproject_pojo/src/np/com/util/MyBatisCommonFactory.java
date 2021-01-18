@@ -61,6 +61,7 @@ public class MyBatisCommonFactory {
 	//싱글톤 패턴으로 개발을 전개해야 할 때는 메소드로 객체 주입 받도록 한다.
 	//한번 생성한 후 서버가 유지되는 동안에는 계속 사용할 수 있도록 함.
 	//scope : application scope를 갖도록 한다.
+	public static  SqlSessionFactory getSqlSessionFactory() {
 	public static  SqlSession getSqlSession() {
 		if(sqlSessionFactory==null) {
 			synchronized (SqlSessionFactory.class)
@@ -85,6 +86,7 @@ public class MyBatisCommonFactory {
 				}
 			}
 		}
+		return sqlSessionFactory;
 		return sqlSessionFactory.openSession();
 	}
 }

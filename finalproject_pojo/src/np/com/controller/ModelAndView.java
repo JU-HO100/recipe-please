@@ -45,6 +45,7 @@ public class ModelAndView {
 		
 		
 		try {
+			if(strTemp.indexOf("select") >=0 || strTemp.indexOf("list")>=0 || strTemp.indexOf("login")>=0) {							//문자열중에 select 나 list 가 있으면 포워드
 			if(strTemp.indexOf("select") >=0 || strTemp.indexOf("list")>=0) {							//문자열중에 select 나 list 가 있으면 포워드
 				RequestDispatcher view = request.getRequestDispatcher(viewName);
 				view.forward(request, response);
@@ -57,7 +58,6 @@ public class ModelAndView {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
 	public void addObject(String name, Object obj) {//scope가 request일때 값을 유지하기
 		//여러개의 값을 추가하는 코드
 		Map<String,Object> rMap = new HashMap<>();

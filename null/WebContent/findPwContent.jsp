@@ -8,7 +8,7 @@
 			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">이름</p>
 		</td>
 		<td style="widows: 50%">
-			<input type="text" name="name" id="name" style="float: left;" required="required">
+			<input value="안준헌" type="text" name="name" id="name" style="float: left;" required="required">
 		</td>
 	</tr>
 	<tr style="height:80px; ">
@@ -16,15 +16,15 @@
 			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">아이디</p>
 		</td>
 		<td>
-			<input type="text" name="id" id="id" style="float: left;" required="required">
+			<input value="test123" type="text" name="id" id="id" style="float: left;" required="required">
 		</td>
 	</tr>
 	<tr style="height:80px; ">
 		<td style="width: 50%; text-align: center; ">
-			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;" >전화번호</p>
-		</td>
+			<p style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;" >전화번호<br/> (- 없이 입력 바랍니다.)</p>
+		</td>	
 		<td>
-			<input type="tel" name="phoneNum" id="phoneNum" style="float: left;" required="required">
+			<input value="01012345678" type="tel" name="phoneNum" id="phoneNum" style="float: left;" required="required">
 		</td>
 	</tr>
 	<tr style="height:120px; ">

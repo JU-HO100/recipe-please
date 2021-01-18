@@ -1,5 +1,16 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	int tot = 0;
+	List<Map<String,Object>> boardList = null;
+	boardList = (List<Map<String,Object>>)request.getAttribute("boardList");
+	if(boardList !=null){
+		tot = boardList.size();
+	}
+	
+%>   
 <div class="container" style="background-color: white;">
 	<table style="width: 100%">
   		<tr>
@@ -13,34 +24,27 @@
 	</table>
   <table class="table table-hover">
     <tbody>
-      <tr style="cursor: pointer;">
-      	<td style="width: 30%">
-      		<input type="image" src="./images/food.jpg" style="width: 100%">
-      	</td>
-        <td style="width: 55%">요리1</td>
-        <td style="width: 15%">셰프1</td>
-      </tr>
-      <tr style="cursor: pointer;">
-      	<td>
-			<input type="image" src="./images/food.jpg" style="width: 100%">
-      	</td>
-        <td>요리2</td>
-        <td>셰프2</td>
-      </tr>
-      <tr style="cursor: pointer;">
-      	<td style="width: 30%">
-      		<input type="image" src="./images/food.jpg" style="width: 100%">
-      	</td>
-        <td>요리3</td>
-        <td>셰프3</td>
-      </tr>
-      <tr style="cursor: pointer;">
-      	<td style="width: 30%">
-      		<input type="image" src="./images/food.jpg" style="width: 100%">
-      	</td>
-        <td>요리4</td>
-        <td>셰프4</td>
-      </tr>
+<!--       <tr style="cursor: pointer;"> -->
+<!--       	<td style="width: 30%"> -->
+<!--       		<input type="image" src="./images/food.jpg" style="width: 100%"> -->
+<!--       	</td> -->
+<!--         <td style="width: 55%">요리1</td> -->
+<!--         <td style="width: 15%">셰프1</td> -->
+<!--       </tr> -->
+<%
+			for(int i=0;i<4;i++){
+			//Map<String,Object> rmap = boardList.get(i);
+%>
+	<tr style="cursor: pointer;">
+	<td style="width: 30%">
+		<input type="image" src="./images/food.jpg" style="width: 100%">
+	</td>
+		<td style="width: 55%">요리1</td>
+		 <td style="width: 15%">셰프1</td>
+	</tr>
+<%
+			}
+%>
     </tbody>
   </table>
 </div>

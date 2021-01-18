@@ -25,6 +25,7 @@ public class HashMapBinder  {
 			//<input name="mem_id">  가 오는거임
 			String key = en.nextElement(); // mem_id, mem_pw, mem_addr, mem_hp
 //			String[] values = request.getParameterValues(key);
+			target.put(key,request.getParameter(key));
 			target.put(key,HangulConversion.toUTF(request.getParameter(key)));
 		}
 	}

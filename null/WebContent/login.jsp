@@ -59,11 +59,31 @@ function findPwAction() {
    // 사용할 앱의 JavaScript 키를 설정해 주세요.
    Kakao.init('f61c36ee28b1fe4d00e270bcf75d344d');
    
+   
    // 카카오 로그인 버튼을 생성합니다.
    Kakao.Auth.createLoginButton({
      container: '#kakao-login-btn',
      success: function(authObj) {
-    alert(JSON.stringify(authObj));
+//     alert(JSON.stringify(authObj));
+//    Kakao.Auth.authorize({
+// 		  redirectUri: 'http://192.168.0.38:9000/loginIndex.jsp'
+// 		});
+    // 로그인 성공시, API를 호출합니다.
+	    Kakao.API.request({
+	     url: '/v2/user/me',
+	     success: function(res) {
+      		console.log(res);
+	      	var id = res.id;      //유저의 카카오톡 고유 id
+	      	var email = res.kaccount_email;   //유저의 이메일
+	      	var name = res.properties.nickname; //유저가 등록한 별명
+      		var html = '<BR>'+email+'<BR>'+name;
+      		
+      		location.href='loginIndex.jsp?name='+name+'&email='+email
+     	},
+	     fail: function(error) {
+	         alert(JSON.stringify(error));
+	        }
+	     });
      },
      fail: function(err) {
      alert(JSON.stringify(err));
