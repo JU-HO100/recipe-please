@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <% String MSG = (String)request.getAttribute("msg"); %>
 <% String id = (String)session.getAttribute("id"); %>
+<%! int[] c_classcdArr;%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,31 +49,50 @@
 					<tr>
 						<td style="border: none;">
 							<h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px;">쿠킹클래스 신청</h1>
-							<script type="text/javascript">
-								var locFor = {};
-								      $.ajax({
+ 							<script type="text/javascript">
+ 									function apply(i) {
+ 										if (confirm("해당 쿠킹 클래스를 등록하시겠습니까??") == true){    //확인
+											location.href="/cookclass/joinClass.np?c_classcd="+i+"&m_id="+"<%=id%>";
+ 										}else{
+ 										    return;
+ 										}
+									}
+ 									<%--============================= 전역변수 설정========================== --%>
+ 									 $.ajax({
 									     url : "/cookclass/showClass.np?m_id="+"<%=id%>"
-								         ,success : function (result) { 
-								        	 $.each(result, function (index, item) {
-								        	       //table에 출력   
-								        	      if(item.C_COOK != null){
-									        	      var str = '<table style="width:100%; margin-bottom:5%"><tr><td style="width:50%"> 제목 : '+item.C_COOK+'</td>';
-									        	      str += '<td colspan="2" style="width:50%"> 날짜 : ' + item.C_DATE + '</td></tr>';
-									        	      str += '<tr><td colspan="3"> 준비물 : ' + item.C_INGREDIENTS + '</td></tr>';
-									        	      str += '<tr><td colspan="3"> 주소 : ' + item.C_ZIP + '</td></tr>';
-									        	      str += '<tr><td> 현재인원 : ' + item.NOWPERSONS + '</td>';
-									        	      str += '<td> 최대인원 : ' + item.MAXPERSONS + '</td>';
-									        	      str += '<td style="float: right;"><button class="btn btn-outline-dark" onclick="location.href="/cookclass/joinClass.np?m_id=<%=id%>&c_classcd=1"">신청하기</button></td></tr></table>';
-									        	      $('#cookclass').append(str);
-								        	      }
-								        	   });
-								        	}
-								         });
-							</script>
+								         ,success : function (data) { 
+	 								//jsontext에 JSON객체를 넣는다.
+				 						  var result = JSON.stringify(data);
+				    				   //alert("result:"+result);
+				    				   var arr = JSON.parse(result);
+	 								//for문을 돌면서 contact[i]의 key 값을 가져와 value값 출력해준다.
+	 										for (var i = 0; i < arr.length; i++) {
+	 												c_classcdArr.push(arr[i].C_COOK);
+	 												}
+	 											}})
+ 									<%--============================= 전역변수 설정========================== --%>
+ 								      $.ajax({
+ 									     url : "/cookclass/showClass.np?m_id="+"<%=id%>"
+ 								         ,success : function (result) { 
+ 								        	 $.each(result, function (index, item) {
+ 								        	       //table에 출력   
+ 								        	      if(item.C_COOK != null){
+ 									        	      var str = '<table style="width:100%; margin-bottom:5%"><tr><td style="width:50%"> 제목 : '+item.C_COOK+'</td>';
+ 									        	      str += '<td colspan="2" style="width:50%"> 날짜 : ' + item.C_DATE + '</td></tr>';
+ 									        	      str += '<tr><td colspan="3"> 준비물 : ' + item.C_INGREDIENTS + '</td></tr>';
+ 									        	      str += '<tr><td colspan="3"> 주소 : ' + item.C_ZIP + '</td></tr>';
+ 									        	      str += '<tr><td> 현재인원 : ' + item.NOWPERSONS + '</td>';
+ 									        	      str += '<td> 최대인원 : ' + item.MAXPERSONS + '</td>';
+ 									        	      str += '<td style="float: right;"><button class="btn btn-outline-dark" onclick="apply('+item.C_CLASSCD+')">신청하기</button></td></tr></table>'; 
+ 									        	      $('#cookclass').append(str);
+ 								        	      }
+ 								        	   });
+ 								        	}
+ 								         });
+ 							</script>
 						</td>
 					</tr>
 			   </table>
-			</td>
 		</tr>
 			<!-- End Content -->
 			<!-- Footer -->

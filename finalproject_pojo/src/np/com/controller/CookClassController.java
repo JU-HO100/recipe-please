@@ -44,7 +44,7 @@ public class CookClassController implements Action{
 			mav.addObject("msg", msg);
 		}
 		else if(pageName.equals("joinClass")) {		//쿠킹 클래스 참가
-			pageName = "cookingClassList";
+			pageName = "goCookingClassApplicationSelect";
 			pmap.put("field","ATTEND_COOKCLASS");
 			pmap.put("c_cook", "");
 			pmap.put("c_ingredients", "");
