@@ -112,7 +112,12 @@ public class RecipeController implements Action{
 			logger.info("RecipeC - checkAllLikes >>>> "+msg);
 			mav.addObject("msg", msg);
 		}
-		
+	    else if(pageName.equals("forChart")) {//차트 출력용
+		       List<Map<String, Object>> list =recipeDao.forChart(pmap);
+		       logger.info("MemberC -  forChart >>>> "+list);
+		       g = new Gson();
+		       forJson = g.toJson(list);
+		}
 		
 		
 		if(g == null) {
@@ -124,4 +129,6 @@ public class RecipeController implements Action{
 		
 		return mav;
 	}
+	
+	
 }

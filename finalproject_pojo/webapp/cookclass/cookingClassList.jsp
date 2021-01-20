@@ -1,4 +1,3 @@
-<%@page import="com.sun.xml.internal.bind.v2.runtime.Location"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <% String MSG = (String)request.getAttribute("msg"); %>
@@ -9,88 +8,10 @@
 <meta charset="UTF-8">
 <%@ include file="/common/bootstrap_common.jsp"%>
 <title>오늘 뭐 먹지?</title>
-<script type="text/javascript">
-function cookingClassSignUpContent(){
-	$.ajax({
-	      type : "GET",
-	      url : "/cookclass/showClass.np?m_id="+"<%=id%>",
-	      dataType : "json",
-	      success : function(data) {
-	    	 	var result = JSON.stringify(data);
-			  	var arr = JSON.parse(result);
-			 	for(var i=0;i<arr.length;i++){
-			 		if(arr[i].MSG == null){//값을 불러옴
-			 			$("#c_cook").textbox('setValue',arr[i].C_COOK);
-			 			$("#c_date").textbox('setValue',arr[i].C_DATE);
-			 			$("#c_ingredients").textbox('setValue',arr[i].C_INGREDIENTS);
-			 			$("#c_zip").textbox('setValue',arr[i].C_ZIP);
-			 			$("#c_member").textbox('setValue',arr[i].C_MEMBER);
-					}else{
-						 alert('통신실패!!');
-					}
-			 	}
-	    }
-});
-  }
-function cookingClassRegisterContent(){
-    $.ajax({
-      type : "GET",
-      url : "../cookingClassRegisterContent.jsp",
-      dataType : "html",
-      error : function() {
-        alert('통신실패!!');
-      },
-      success : function(data) {
-        $('#tb_ajax').html(data);
-      }
-
-    });
-  }
-
-function check() {
-		//제목 공백 확인
-	    if($("#c_cook").val() == ""){
-	      alert("제목을 입력해주세요.");
-	      $("#c_cook").focus();
-	      return false;
-	    }
-		
-	  //재료 공백 확인
-	    if($("#c_ingredients").val() == ""){
-	      alert("재료를 입력해주세요");
-	      $("#c_ingredients").focus();
-	      return false;
-	    }
-	  
-	  //실습주소 공백 확인
-	    if($("#c_zip").val() == ""){
-	      alert("실습주소를 입력해주세요");
-	      $("#c_zip").focus();
-	      return false;
-	    }
-	  
-	  //날짜 공백 확인
-	    if($("#c_date").val() == ""){
-	      alert("날짜를 입력해주세요");
-	      $("#c_date").focus();
-	      return false;
-	    }
-	  
-	  //수강 최대 인원 공백 확인
-	    if($("#c_ingredients").val() == ""){
-	      alert("수강 최대인원을 입력해주세요");
-	      $("#c_ingredients").focus();
-	      return false;
-	    }
-	alert("등록되었습니다");
-	return true;
-}
-function gosubmit(){// c_classcd1 - 쿠킹클래스의 개수까지
-	
-}
-</script>
+<script type="text/javascript" src="<%=path.toString() %>js/cookclass.js"></script>
 </head>
 <body>
+	<%if(id!=null){ %>
 	<table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
@@ -118,36 +39,39 @@ function gosubmit(){// c_classcd1 - 쿠킹클래스의 개수까지
 		<tr>
 			<td style="width: 19%; vertical-align: top;">
 				<div class="btn-group-vertical" style="width: 100%; margin-top: 12%">
-					 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="cookingClassSignUpContent()">쿠킹 클래스 신청</button>
-					 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="cookingClassRegisterContent()">쿠킹 클래스 등록</button>
+					 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="reload()">쿠킹 클래스 신청</button>
+					 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="location.href='/member/checkChef.np?m_id=<%=id%>'">쿠킹 클래스 등록</button>
 				</div>
 			</td>
-			<td style="width: 70%; padding-top:3% ;padding-left: 5%; padding-right: 5%">
-				<div id="tb_ajax">
-					<script type="text/javascript">
-					$.ajax({
-					      type : "GET",
-					      url : "/cookclass/showClass.np?m_id="+"<%=id%>",
-					      dataType : "json",
-					      success : function(data) {
-					    	 	var result = JSON.stringify(data);
-							  	var arr = JSON.parse(result);
-							 	for(var i=0;i<arr.length;i++){
-							 		if(arr[i].MSG == null){//값을 불러옴
-							 			$("#c_cook").textbox('setValue',arr[i].C_COOK);
-							 			$("#c_date").textbox('setValue',arr[i].C_DATE);
-							 			$("#c_ingredients").textbox('setValue',arr[i].C_INGREDIENTS);
-							 			$("#c_zip").textbox('setValue',arr[i].C_ZIP);
-							 			$("#c_member").textbox('setValue',arr[i].C_MEMBER);
-									}else{
-										 alert('통신실패!!');
-									}
-							 	}
-					    }
-				});
-					</script>
-					<%@ include file="/cookclass/cookingClassSignUpContentList.jsp"%>
-				</div>
+			<td style="width: 70%; padding-top:3% ;padding-left: 5%; padding-right: 5%;">
+				<table id="cookclass"  class="table" style="width: 100%;">
+					<tr>
+						<td style="border: none;">
+							<h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px;">쿠킹클래스 신청</h1>
+							<script type="text/javascript">
+								var locFor = {};
+								      $.ajax({
+									     url : "/cookclass/showClass.np?m_id="+"<%=id%>"
+								         ,success : function (result) { 
+								        	 $.each(result, function (index, item) {
+								        	       //table에 출력   
+								        	      if(item.C_COOK != null){
+									        	      var str = '<table style="width:100%; margin-bottom:5%"><tr><td style="width:50%"> 제목 : '+item.C_COOK+'</td>';
+									        	      str += '<td colspan="2" style="width:50%"> 날짜 : ' + item.C_DATE + '</td></tr>';
+									        	      str += '<tr><td colspan="3"> 준비물 : ' + item.C_INGREDIENTS + '</td></tr>';
+									        	      str += '<tr><td colspan="3"> 주소 : ' + item.C_ZIP + '</td></tr>';
+									        	      str += '<tr><td> 현재인원 : ' + item.NOWPERSONS + '</td>';
+									        	      str += '<td> 최대인원 : ' + item.MAXPERSONS + '</td>';
+									        	      str += '<td style="float: right;"><button class="btn btn-outline-dark" onclick="location.href="/cookclass/joinClass.np?m_id=<%=id%>&c_classcd=1"">신청하기</button></td></tr></table>';
+									        	      $('#cookclass').append(str);
+								        	      }
+								        	   });
+								        	}
+								         });
+							</script>
+						</td>
+					</tr>
+			   </table>
 			</td>
 		</tr>
 			<!-- End Content -->
@@ -159,5 +83,11 @@ function gosubmit(){// c_classcd1 - 쿠킹클래스의 개수까지
 		</tr>
 			<!-- End Footer -->
 </table>
+<%}else{ %>
+<script type="text/javascript">
+	alert("로그인 후 이용해주세요.");
+ 	history.go(-1);
+</script>
+<%} %>
 </body>
 </html>

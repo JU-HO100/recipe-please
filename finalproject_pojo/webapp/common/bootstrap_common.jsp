@@ -42,3 +42,5 @@
 <!-- kakao Login API -->
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	
+<!-- google chart -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

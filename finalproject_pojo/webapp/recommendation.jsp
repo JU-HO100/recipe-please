@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
+<script type="text/javascript">
+function logout() {
+	location.href="/member/logout.jsp";
+}
+</script>
 </head>
 <body>
 <table align="center" style="width: 70% ; height: 100%;">

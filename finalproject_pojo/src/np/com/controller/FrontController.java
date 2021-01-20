@@ -29,6 +29,7 @@ public class FrontController extends HttpServlet {
 		contList.put("member",new MemberController());
 		contList.put("recipe",new RecipeController());
 		contList.put("cookclass",new CookClassController());
+		contList.put("admin",new AdminController());
 	}
 	
 	public void doProcess(HttpServletRequest req, HttpServletResponse res)

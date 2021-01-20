@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<table style="width: 100%">
+<table style="width: 100%; height: 400px;'">
 	<tr>
 		<td style="width: 79%">
 			<form method="get" name="memberOutForm" action="/member/withDrawal.np">
@@ -12,7 +12,7 @@
 							style="font-family: Black Han Sans, sans-serif; color: black; padding-top: 16px;">아이디</p>
 					</td>
 					<td>
-						<input value="test123" type="text" name="m_id" id="m_id" style="float: left;">
+						<input value="np1234" type="text" name="m_id" id="m_id" style="float: left;">
 					</td>
 				</tr>
 				<tr style="height: 80px;">

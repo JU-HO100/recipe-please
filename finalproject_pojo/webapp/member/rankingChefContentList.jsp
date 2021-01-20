@@ -8,24 +8,21 @@
 		<td style="width: 80%; padding-left: 5%; padding-right: 5%;">
   		<h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: 10px;">셰프 랭킹</h1>
 		<table class="table table-hover">
-			<tbody>
 		      <tr style="cursor: pointer;">
-		      	<td style="width: 20%;">
-			     	<input type="image" src="/images/r1.jpg" style="width: 100%; cursor: default;">
-		      		<img id="like" src="/images/likeOff.png" style="width: 20%;border: none;cursor:pointer;" onclick="javascript:changeLike(0)">
-		      		<%=100 %>
-		      	</td>
 							<td>
-								<input class ="easyui-textbox"  id="m_name" name="m_name"  label="셰프" data-options="prompt:'Enter a ENAME'" style="width:250px"/>
+								<input class ="easyui-textbox"  id="ranking" name="ranking"  label="순위" data-options="prompt:'Enter a ENAME'" style="width:250px"/>
 							</td>
-<!-- 							<td> -->
-<!-- 								<input class ="easyui-textbox"  id="c_cook" name="c_cook"  label="소개란" data-options="prompt:'Enter a ENAME'" style="width:250px"/> -->
-<!-- 							</td> -->
+					      	<td>
+<!-- 					      		<img id="like" src="/images/likeOff.png" style="width: 20%;border: none;cursor:pointer;" onclick="javascript:changeLike(0)"> -->
+								<input class ="easyui-textbox"  id="m_like" name="m_like"  label="like" data-options="prompt:'Enter a ENAME'" style="width:250px"/>
+					      	</td>
+							<td>
+								<input class ="easyui-textbox"  id="m_name" name="m_name"  label="셰프님" data-options="prompt:'Enter a ENAME'" style="width:250px"/>
+							</td>
 <!-- 							<td> -->
 <!-- 								<input class ="easyui-textbox"  id="c_cook" name="c_cook"  label="주력요리" data-options="prompt:'Enter a ENAME'" style="width:250px"/> -->
 <!-- 							</td> -->
 		      </tr>
-		  </tbody>
 		</table>
 		</td>
 	</tr>

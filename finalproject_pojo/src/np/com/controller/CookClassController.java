@@ -49,6 +49,7 @@ public class CookClassController implements Action{
 			pmap.put("c_cook", "");
 			pmap.put("c_ingredients", "");
 			pmap.put("c_zip", "");
+			pmap.put("c_zipdetail", "");
 			pmap.put("c_member", "");
 			pmap.put("c_date", "");
 			String msg= cookClassDao.cookingClass(pmap);
@@ -61,7 +62,6 @@ public class CookClassController implements Action{
 			mav.addObject("msg", msg);
 		}
 		else if(pageName.equals("showClass")) {		//쿠킹클래스 전부 보기
-			pageName="cookingClassSignUpContentList";
 			List<Map<String, Object>> list = cookClassDao.showClass(pmap);
 			logger.info("CookClassC - showClass"+list);
 			g = new Gson();

@@ -15,7 +15,6 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import np.admin.model.AdminMemDao;
 import np.com.util.HashMapBinder;
 import np.mem.model.MemberDao;
 
@@ -31,7 +30,6 @@ public class MemberController implements Action{
 		PrintWriter out = res.getWriter();
 		String pageName = (String)req.getAttribute("pageName");//memberList
 		MemberDao memDao = MemberDao.getInstance();
-		AdminMemDao adMemDao = AdminMemDao.getInstance();
 		
 		Gson g = null;
 	    Map<String,Object> pmap = new HashMap<>();
@@ -107,20 +105,32 @@ public class MemberController implements Action{
 		}
 		//new(미구현)
 		else if(pageName.equals("checkCookClass")) {//나의 쿠킹클래스 확인하기(마이페이지부분)
+			pageName="cookingClassCheckContent";
 			pmap.put("field","CHECK_COOKCLASS");
 			List<Map<String, Object>> list =memDao.myPage(pmap);
 			logger.info("MemberC - checkCookClass >>>> "+list);
-			mav.addObject("list", list);
+			g = new Gson();
+			forJson = g.toJson(list);
 		}
 		else if(pageName.equals("memUpd")) {//회원정보수정
+			pageName="updateResultSelect";
 			String msg =memDao.updateMypage(pmap);
 			logger.info("MemberC - memUpdMsg >>>> "+msg);
+			if(msg.equals("닉네임이 이미 존재합니다")||msg.equals("패스워드가 틀렸습니다")) {//회원정보 수정실패
+			}
+			else {//회원 정보수정 성공
+				session.removeAttribute("nick");
+				session.setAttribute("nick",msg);
+			}
 			mav.addObject("msg", msg);
 		}
 		else if(pageName.equals("withDrawal")) {//회원탈퇴
-			pageName="index";
+			pageName="goMemberOutSelect";
 			String msg =memDao.withDraw(pmap);
 			logger.info("MemberC - nickCheckRegiMsg >>>> "+msg);
+			if(msg.equals("정상적으로 탈퇴되었습니다")) {
+				session.invalidate();
+			}
 			mav.addObject("msg", msg);
 		}
 		else if(pageName.equals("idSearch")) {//id찾기
@@ -146,6 +156,7 @@ public class MemberController implements Action{
 		}
 		//new
 		else if(pageName.equals("submitResume")) {//셰프 양식서 제출
+			pageName="goChefRegisterSelect";
 			pmap.put("field","SUBMIT_RESUME");
 			String msg =memDao.chefResume(pmap);
 			logger.info("MemberC -  submitResume >>>> "+msg);
@@ -153,6 +164,9 @@ public class MemberController implements Action{
 		}
 		//new
 		else if(pageName.equals("popRecipeNum")) {//내 인기게시물 개수 (3개이상 or 3개미만)
+			pageName="registerChefContentSelect";
+			pmap.put("main_food","");
+			pmap.put("writting","");
 			pmap.put("field","POP_RECIPE_NUM");
 			String msg =memDao.chefResume(pmap);
 			logger.info("MemberC -  popRecipeNum >>>> "+msg);
@@ -175,6 +189,13 @@ public class MemberController implements Action{
 			logger.info("MemberC -  chefBoard >>>> "+list);
 			mav.addObject("list", list);
 		}
+	      else if(pageName.equals("checkChef")) {//셰프인지 아닌지 체크
+	    	  pageName="goCookingClassRegisterSelect";
+	          String msg =memDao.checkChef(pmap);
+	          logger.info("MemberC -  popRecipeNum >>>> "+msg);
+	          mav.addObject("msg", msg);
+	       }
+
 		
 		
 		//admin 해야함
@@ -188,4 +209,6 @@ public class MemberController implements Action{
 		
 		return mav;
 	}
+	
+	
 }

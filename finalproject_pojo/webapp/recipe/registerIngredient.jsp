@@ -20,7 +20,6 @@ function adjustHeight() {
 <table align="center"  style="width: 100%; text-align: center;">
 	<tr>
 		<td>
-			재료태그구현
 		</td>
 	</tr>
 	<tr>

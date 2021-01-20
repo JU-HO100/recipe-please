@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
+<%String indexNick =  (String)session.getAttribute("nick");%>
 <script>
 //Get the button
 var mybutton = document.getElementById("myBtn");
@@ -17,7 +18,7 @@ function topFunction() {
 }
 
 function logout() {
-		location.href="logout.jsp";
+		location.href="/member/logout.jsp";
 }
 </script>
 <style>
@@ -43,12 +44,16 @@ function logout() {
 	<table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
-			<%if(session.getAttribute("nick")!=null){ %>
-			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+			<%if(indexNick!=null && indexNick.equals("총관리자")){ %>
+			<td colspan="3" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+				<%@ include file="/adminHeader.jsp"%>
+			</td>		
+			<%}else if(indexNick!=null && indexNick.length() >0 && ! indexNick.equals("총관리자")){ %>
+			<td colspan="3" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/loginOkHeader.jsp"%>
 			</td>
 			<%}else{ %>
-			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+			<td colspan="3" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/header.jsp"%>
 			</td>
 			<%} %>
@@ -57,7 +62,7 @@ function logout() {
 			
 			<!-- NavBar -->
 		<tr>
-			<td colspan="2" style="width: 100%;">
+			<td colspan="3" style="width: 100%;">
 				<%@ include file="/navbar.jsp" %>
 			</td>
 		</tr>
@@ -66,7 +71,7 @@ function logout() {
 			
 			<!-- Carousel -->
 		<tr>
-			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+			<td colspan="3" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/carousel.jsp"%>
 			</td>
 		</tr>
@@ -75,18 +80,21 @@ function logout() {
 			
 			<!-- Content -->
 		<tr>
-			<td style="width: 50%">
+			<td style="width: 60%">
 				<%@ include file="/content.jsp" %>
 			</td>
-			<td style="width: 50%">
-				<%@ include file="/content2.jsp" %>
+			<td style="width: 20%;">
+				<%@ include file="/member/google1.jsp" %>
+			</td>
+			<td style="width: 20%">
+				<%@ include file="/member/google2.jsp" %>
 			</td>
 		</tr>
 			<!-- End Content -->
 			
 			<!--  Carousel 2 -->
 		<tr>
-			<td colspan="2" style="width: 100%;">
+			<td colspan="3" style="width: 100%;">
 				<%@ include file="/carousel2.jsp"%>
 			</td>
 		</tr>
@@ -94,7 +102,7 @@ function logout() {
 			
 			<!-- Footer -->
 		<tr>
-			<td colspan="2" style="padding-top: 8%">
+			<td colspan="3" style="padding-top: 8%">
 				<%@ include file="/footer.jsp" %>
 			</td>
 		</tr>

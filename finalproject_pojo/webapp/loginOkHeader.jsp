@@ -37,7 +37,6 @@
 				<a href="/member/mypage.jsp" style="font-family: Black Han Sans, sans-serif; color: black;">
 					마이페이지
 				</a>
-				&nbsp;&nbsp;&nbsp;
 			</td>
 			<td style="width: 8%; padding-top: 15px; padding-left:5px; text-align: left; ">
 				<a href="javascript:logout();"  style="font-family: Black Han Sans, sans-serif; color: black; cursor: pointer;">

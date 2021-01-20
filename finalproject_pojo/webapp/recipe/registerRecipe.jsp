@@ -6,23 +6,7 @@
 <meta charset="UTF-8">
 <title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
-<script>
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-  
-}
-function goRecipe() {
-	location.href="/recipe/registerRecipe.jsp";
-}
-function logout() {
-	location.href="/member/logout.jsp";
-}
-</script>
+<script type="text/javascript" src="<%=path.toString() %>js/registerRecipe.js"></script> 
 <style>
 #myBtn {
   position: fixed;
@@ -44,15 +28,9 @@ function logout() {
 	<table align="center" style="width: 70% ; height: 100%;">
 			<!-- Header -->
 		<tr>
-			<%if(session.getAttribute("nick")!=null){ %>
-			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
-				<%@ include file="/loginOkHeader.jsp"%>
-			</td>
-			<%}else{ %>
-			<td colspan="2" style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
+			<td style="width: 100%; padding-top: 2%; padding-bottom: 2%;">
 				<%@ include file="/header.jsp"%>
 			</td>
-			<%} %>
 		</tr>
 			<!-- END Header -->
 			
@@ -65,20 +43,8 @@ function logout() {
 			<!-- END NavBar -->
 			<!-- Content -->
 		<tr>
-			<td style="padding-left: 1%; padding-bottom: 1%; padding-top: 3%; padding-right: 1%;" >
-				<%@ include file="/largeCategory.jsp" %>
-			</td>
-		</tr>
-		<tr>
-			<td style="padding-left: 1%; padding-bottom: 5%">
-				<%@ include file="/smallCategory.jsp" %>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<div id="tb_ajax">
-					<%@ include file="/recipeContent.jsp" %>
-				</div>
+			<td style="padding-top: 5%; padding-left: 25%" >
+				<%@include file="/registerRecipeContent.jsp" %>
 			</td>
 		</tr>
 			<!-- End Content -->	

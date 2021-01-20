@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/common/bootstrap_common.jsp"%>
+<%String msg =(String)request.getAttribute("msg"); %>
 <title>오늘 뭐 먹지?</title>
 <script type="text/javascript">
 function loginAction() {
@@ -32,6 +33,11 @@ function findPwAction() {
 </script>
 </head>
 <body>
+<%if(msg!=null){%>
+<script type="text/javascript">
+	alert("<%=msg%>");
+</script>
+<%} %>
 <table align="center" style="width: 70% ; height: 100%;">
 	<tr>
 		<td>
@@ -44,31 +50,9 @@ function findPwAction() {
 		</td>	
 	</tr>
 	<tr>
-		<td align="center" style="padding-bottom: 8%">
-<%-- 			<%@ include file="/kakaoLogin.jsp" %> --%>
-		</td>		
-	</tr>
-	<tr>
-		<td>
+		<td style="padding-top: 12%">
 			<%@ include file="/footer.jsp" %>
 		</td>
 	</tr>	
 </table>
-<script type='text/javascript'>
-    //<![CDATA[
-   // 사용할 앱의 JavaScript 키를 설정해 주세요.
-   Kakao.init('f61c36ee28b1fe4d00e270bcf75d344d');
-   
-   // 카카오 로그인 버튼을 생성합니다.
-   Kakao.Auth.createLoginButton({
-     container: '#kakao-login-btn',
-     success: function(authObj) {
-    alert(JSON.stringify(authObj));
-     },
-     fail: function(err) {
-     alert(JSON.stringify(err));
-     }
-   });
-    //
- </script>
 </body>

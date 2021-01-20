@@ -178,15 +178,19 @@ String.prototype.byteLength = function() {
  	function idCheckRegi() {
  		var m_id = $('#m_id').val();
  		var url = "/member/idCheckRegi.np?m_id="+m_id;
+ 		var left = Math.ceil((window.screen.width - 700)/2);
+ 	    var top = Math.ceil((window.screen.height - 700)/2);
  		var name = "아이디 중복 체크";
-        var option = "width = 300, height = 100, top = 400, left = 800, location = no"
+        var option = "width = 300, height = 100, top="+top+", left="+left+", location = no"
   		window.open(url, name, option);
 	}
  	function nickCheckRegi() {
  		var m_nick = $('#m_nick').val();
  		var url = "/member/nickCheckRegi.np?m_nick="+m_nick;
+ 		var left = Math.ceil((window.screen.width - 700)/2);
+ 	    var top = Math.ceil((window.screen.height - 700)/2);
  		var name = "닉네임 중복 체크";
-        var option = "width = 300, height = 100, top = 400, left = 800, location = no"
+        var option = "width = 300, height = 100, top="+top+", left="+left+", location = no"
   		window.open(url, name, option);
 	}
 	

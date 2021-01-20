@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <form action=""  method="get">
-<table style="width: 100%; margin-left: 25%">
+<table style="width: 100%; " align="center">
 	<tr>
 		<td>
 			  <div class="input-group mb-3" style="width: 50%">
 			    <div class="input-group-prepend">
 			      <span class="input-group-text">제목</span>
 			    </div>
-			    <input type="text" id="title" name="title" class="form-control" placeholder="어떤요리인지 알 수 있도록 작성해주세요." >
+			    <input type="text" id="foodname" name="foodname" class="form-control" placeholder="어떤요리인지 알 수 있도록 작성해주세요." >
 			  </div>
 		</td>
 	</tr>
@@ -38,7 +38,7 @@
 	</tr>
 	<tr>
 		<td>
-			<button  style="margin-left: 45%" type="button" class="btn btn-outline-secondary"  onclick="gosubmit()">등록하기</button>
+			<button  style="margin-left: 60%" type="button" class="btn btn-outline-secondary"  onclick="gosubmit()">등록하기</button>
 		</td>
 	</tr>
 </table>
