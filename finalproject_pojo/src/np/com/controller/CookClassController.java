@@ -68,13 +68,13 @@ public class CookClassController implements Action{
 			forJson = g.toJson(list);
 		}
 		//new
-		else if(pageName.equals("myClassMemList")) {		// 내 쿠킹클래스 전체의 신청 회원 보기
+		else if(pageName.equals("myClassMemList")) {		//해당 클래스의 신청회원 보기
 			pmap.put("field","SHOW_APPLY_USERS");
-			pmap.put("c_classcd","");
 			pmap.put("m_id","");
 			List<Map<String, Object>> list = cookClassDao.classForChef(pmap);
 			logger.info("CookClassC - myClassMemList"+list);
-			mav.addObject("list", list);
+			g = new Gson();
+			forJson = g.toJson(list);
 		}
 		//new
 		else if(pageName.equals("myClassMemAccept")) {		//쿠킹클래스 회원 수락

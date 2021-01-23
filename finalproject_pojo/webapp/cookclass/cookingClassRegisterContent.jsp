@@ -68,8 +68,12 @@
 							 <input type="text" class="form-control" value="인천광역시 부평구 선청동 240-1" placeholder="실습주소를 입력해주세요." id="c_zip" name="c_zip">
 						</div>
 						<div class="form-group">
-							<label>날짜:</label>
-							 <input type="date" class="form-control"  value="2021-01-25" placeholder="실습날짜를 입력해주세요." id="c_date" name="c_date">
+							<label>상세주소:</label>
+							 <input type="text" class="form-control" value="oo아파트 00동 000호" placeholder="상세주소를 입력해주세요." id="c_zipdetail" name="c_zipdetail">
+						</div>
+						<div class="form-group">
+							<label>날짜,시간:</label>
+							 <input type="datetime-local" class="form-control"  value="2021-01-22 오후 03:17" placeholder="실습날짜를 입력해주세요." id="c_date" name="c_date">
 						</div>
 						<div class="form-group">
 							<label>수강 최대 인원:</label>

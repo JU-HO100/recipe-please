@@ -65,7 +65,8 @@ public class RecipeController implements Action{
 			pmap.put("menucd","");
 			List<Map<String, Object>> list = recipeDao.boardView(pmap);
 			logger.info("RecipeC - recipeList >>>> "+list);
-			mav.addObject("list", list);
+			 g = new Gson();
+		     forJson = g.toJson(list);
 		}
 		else if(pageName.equals("recipeContent")) {	//단일 게시글 내용
 			pmap.put("field","BOARD_CONTENT");
@@ -88,6 +89,7 @@ public class RecipeController implements Action{
 	        forJson = g.toJson(list);
 		}
 		else if(pageName.equals("jaelyoList")) {	//재료리스트
+			pageName="registerIngredient";
 			pmap.put("field","JAELYO_LIST");
 			List<Map<String, Object>> list = recipeDao.listForGiveInfo(pmap);
 			logger.info("RecipeC - jaelyoList"+list);

@@ -29,11 +29,23 @@
 			//Map<String,Object> rmap = boardList.get(i);
 %>
 	<tr style="cursor: pointer;">
-	<td style="width: 30%">
-		<input type="image" src="/images/food.jpg" style="width: 100%">
-	</td>
-		<td style="width: 55%">요리1</td>
-		 <td style="width: 15%">셰프1</td>
+		<td>
+		<script>
+			$.ajax({
+ 			     url : "/recipe/recipeList.np"
+ 		         ,success : function (result) { 
+ 		        	 $.each(result, function (index, item) {
+ 		        	       //table에 출력   
+ 		        	      if(item.C_COOK != null){
+ 			        	      var str = '<table style="width:100%; margin-bottom:5%"><tr><td style="width:50%"> 제목 : '+item.C_COOK+'</td>';
+ 			        	      str += '<td style="float: right;">작성자 : '+item.C_COOK+'</td></tr></table>'; 
+ 			        	      $('#newRecipe').append(str);
+ 		        	      }
+ 		        	   });
+ 		        	}
+ 		         });
+ 		</script>
+ 		</td>
 	</tr>
 <%
 			}

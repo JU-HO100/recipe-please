@@ -7,21 +7,14 @@
 <title>오늘 뭐 먹지?</title>
 <%@ include file="/common/bootstrap_common.jsp"%>
 <% String ranking = request.getParameter("ranking");%>
+
 <script type="text/javascript">
-	function chefView(){
-  		$('#dlg_chefDetail').dialog({
-  		    title: '__셰프님의 레시피', //셰프이름 데이터 받자
-  		    width: 800,
-  		    height: 800,
-  		    closed: true,
-  		    cache: false,
-  		    href: '/chefDetail.jsp',//나중에 쿼리스트링으로 값 보내기
-  		    modal: true
-  		});  		
-  		$('#dlg_chefDetail').dialog('open');
-  	}
-	function recipeView(){
-		location.href="#"; //해당하는 레시피로 가기
+	function chefView(m_id, m_name){
+ 		var url = "/rankingRecipeContent.jsp?m_id="+m_id;
+ 		var left = Math.ceil((window.screen.width - 700)/2);
+ 	    var top = Math.ceil((window.screen.height - 700)/2);
+        var option = "width = 800, height = 800, top="+top+", left="+left+", location = no"
+  		window.open(url, name, option);
   	}
 	function rankingChefContent(){
 	    $.ajax({
@@ -52,23 +45,6 @@
 
 	    });
 	  }
-// 	 $(function(){
-//          /*웹페이지 열었을 때*/
-//          $("#likeOff").show();
-//          $("#likeOn").hide();
-
-//          /*likeOff을 클릭했을 때 likeOn를 보여줌*/
-//          $("#likeOff").click(function(){
-//              $("#likeOff").hide();
-//              $("#likeOn").show();
-//          });
-
-//          /*likeOn를 클릭했을 때 likeOff을 보여줌*/
-//          $("#likeOn").click(function(){
-//              $("#likeOff").show();
-//              $("#likeOn").hide();
-//          });
-//      });
 <% int state = 0; %>
 	function changeLike(state) {
 		if(state == 0){
@@ -80,31 +56,6 @@
 		}
 	}
 	
-	
-	
-
-//값 불러오기
-
-// 	$.ajax({
-// 		type : "GET",
-// 		url : "/member/chefRanking.np",
-// 		dataType : "json",
-// 		success : function(data) {
-// 			var result = JSON.stringify(data);
-// 			var arr = JSON.parse(result);
-
-// 			for (var i = 0; i < arr.length; i++) {
-// 				if (arr[i].MSG == null) {//값을 불러옴
-// 					$("#ranking").textbox('setValue', arr[i].RANKING);
-// 					$("#m_like").textbox('setValue', arr[i].M_LIKE);
-// 					$("#m_name").textbox('setValue', arr[i].M_NAME);
-// 					// $("#m_name").textbox('setValue',arr[i].M_NAME);
-// 				} else {
-// 					alert('통신실패!!');
-// 				}
-// 			}
-// 		}
-// 	});
 
 function logout() {
 	location.href="/member/logout.jsp";
@@ -148,13 +99,13 @@ function logout() {
 									    	  url : "/member/chefRanking.np",
 									         success : function (result) { 
 									        	  $.each(result, function (index, item) {
-									        		  var str = '<table style="width:100%;"><tr style="cursor:pointer;"><td style="width:20%;"> 순위 : '+item.RANKING+'</td>';
+									        		  var m_id = item.M_ID;
+									        		  var m_name = item.M_NAME;
+									        		  var str = '<table style="width:100%;"><tr style="cursor:pointer;"onclick="javascript:chefView('+"'"+m_id+"'"+','+"'"+m_name+"'"+')"><td style="width:20%;"> 순위 : '+item.RANKING+'</td>';
 									        		  str +='<td style="width:20%;"> like : '+item.M_LIKE+'</td>';
 									        		  str +='<td style="width:20%;"> 셰프님 : '+item.M_NAME+'</td>';
 									        		  str +='<td style="width:20%;"> 주력요리 : '+item.MAIN_FOOD+'</td></tr></table>';
 									        		  $('#ranking').append(str);
-				// 					             $('#tb_ajax').append(
-				// 					           		'순위 : '+item.RANKING+'  like : '+item.M_LIKE+'  셰프님 : '+item.M_NAME+' 주력요리 : '+item.MAIN_FOOD+'<br>'
 									        	  });
 									        	}
 									         });
@@ -175,5 +126,7 @@ function logout() {
 		</tr>
 			<!-- End Footer -->
 	</table>
+<div id="dlg_recipeDetail" closed="true" class="easyui_dialog" style="padding: 20px 50px">
+</div>
 </body>
 </html>

@@ -8,8 +8,7 @@ function topFunction() {
 }
 // 대표이미지 파일 바로 보여주는 스크립트
         $(function() {
-            $("#mainFile").on('change', function(){
-                
+            $('#mainFile').on('change', function(){
                 readURL(this);
             });
         });
@@ -19,58 +18,35 @@ function topFunction() {
             var reader = new FileReader();
  
             reader.onload = function (e) {
-                    $('#mainImage').attr('src', e.target.result);
+                    $('#main_img').attr('src', e.target.result);
                 }
               reader.readAsDataURL(input.files[0]);
             }
         }
 //=============*********************=======================
 // 조리법 이미지 파일 바로 보여주는 스크립트
-//		
-//        $(function() {
-//            $("#file").on('change', function(){
-//                
-//                readURL2(this);
-//            });
-//        });
-//        
-//        function readURL2(input) {
-//            if (input.files && input.files[0]) {
-//            var reader2 = new FileReader();
-// 
-//            reader2.onload = function (e) {
-//                    $('#image').attr('src', e.target.result);
-//                }
-//              reader2.readAsDataURL(input.files[0]);
-//            }
-//        }
-//=============*********************=======================
+		
+		$(function addImage(g_i) {
+		 	for(var y=0;y<g_i;y++){
+		 	if(x==g_i){
+		     $('"#file'+g_i+'"').on('change', function(){
+		         readURL2(this);
+		         });
+		         };
+		     }
+		 });
+     
+     function readURL2(input) {
+         if (input.files && input.files[0]) {
+         var reader2 = new FileReader();
 
-//테이블 계속 추가하는 스크립트
-$(function() {
-	var num=0;
-	$("#add").on("click", function add() {
-		num++;
-		$("#list").append(
-				"<table>"
-		+	"							<tr>"
-		+	"								<td>"
-		+	"								조리법"+num+"  <textarea onkeyup='adjustHeight();'style='overflow: hidden;width:100%' placeholder='해당 순서의 조리법을 작성해주세요.'></textarea>"
-		+	"								</td>"
-		+	"							</tr>"
-		+	"							<tr>"
-		+	"								<td>"
-		+	"									조리법"+num+" 사진"
-		+  "								</td>"
-		+  "							</tr>"
-		+	"							<tr>"
-		+	"								<td>"
-		+  "									<input type='file' id='file' name='file' ><img id='image' alt='이미지를 선택해주세요.' width='150px' height='100px' >"
-		+	"								</td>"
-		+	"							</tr>"
-		+  "	</table>");
-	});
-});
+         reader2.onload = function (e) {
+                 $('#sub_img"+g_i+"').attr('src', e.target.result);
+             }
+           reader2.readAsDataURL(input.files[0]);
+         }
+     }
+//=============*********************=======================
 
 function ingredient() {
     var left = Math.ceil((window.screen.width - 700)/2);

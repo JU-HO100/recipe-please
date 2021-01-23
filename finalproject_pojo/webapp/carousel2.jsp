@@ -10,7 +10,7 @@
   			</td>
   		</tr>
 	</table>
-<table align="center" style="width: 100%; border-top: solid 1px black;">
+<table align="center" style="width: 100%; " class="table">
 	<tr>
 		<td style="width: 100%;">
 			<div id="demo2" class="carousel slide" data-ride="carousel"   style="width: 100%;">

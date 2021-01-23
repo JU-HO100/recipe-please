@@ -23,7 +23,6 @@
                 };
                 var chart = new google.visualization.PieChart(document.getElementById('myChart1'));
                 chart.draw(data, options);
-                console.log(jsonData);
             }
         });
     }

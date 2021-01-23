@@ -80,14 +80,21 @@ function logout() {
 			
 			<!-- Content -->
 		<tr>
-			<td style="width: 60%">
+			<td style="width: 55%">
 				<%@ include file="/content.jsp" %>
 			</td>
-			<td style="width: 20%;">
-				<%@ include file="/member/google1.jsp" %>
-			</td>
-			<td style="width: 20%">
-				<%@ include file="/member/google2.jsp" %>
+			<td style="width: 45%; padding-left:4% ">
+				<h1 style="font-family: 'Nanum Pen Script', cursive; padding-left: px;">좋아요 분포도</h1>
+				<table class="table">
+					<tr>
+						<td>
+							<%@ include file="/member/google1.jsp" %>
+						</td>
+						<td>
+							<%@ include file="/member/google2.jsp" %>
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
 			<!-- End Content -->

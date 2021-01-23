@@ -50,7 +50,7 @@ function registerChefContent(){
 					 <button type="button" class="btn btn-outline-dark" style="text-align: left;" onclick="memberOutContent()">회원 탈퇴</button>
 				</div>
 			</td>
-			<td style="width: 79%">
+			<td style="width: 70%; padding-top:3% ;padding-left: 5%; padding-right: 5%;">
 			<div  id="tb_ajax">
 			<form name="joinchef" method="get" action="/member/submitResume.np">
 				<table align="center" style="width: 70%; ">

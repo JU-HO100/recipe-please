@@ -26,7 +26,20 @@ function memberOutContent(){
 
     });
   }
+function myinfo(){
+    $.ajax({
+      type : "GET",
+      url : "/member/myInfo.jsp",
+      dataType : "text",
+      error : function() {
+        alert('통신실패!!');
+      },
+      success : function(data) {
+        $('#tb_ajax').html(data);
+      }
 
+    });
+  }
 
 function logout() {
 	location.href="logout.jsp";
@@ -210,3 +223,13 @@ function joinChefCheck() {
 	    joinchef.submit();
 	}
 	
+	
+//신청 현황 보기 클릭 시 팝업창 뜨게 하는 스크립트
+function cookingClassMemberCheck() {
+    var left = Math.ceil((window.screen.width - 700)/2);
+    var top = Math.ceil((window.screen.height - 700)/2);
+	var url="./cookingClassMemberCheck.jsp";
+	var name="재료등록";
+	var option = "width=700, height = 700, top="+top+", left="+left+", location=no"
+	window.open(url, name, option);
+}

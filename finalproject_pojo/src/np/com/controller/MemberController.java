@@ -47,7 +47,6 @@ public class MemberController implements Action{
 	             if(map.get("MSG") == null) {
 	                session.setAttribute("id", map.get("M_ID"));
 	                session.setAttribute("nick", map.get("M_NICK"));
-	                session.setMaxInactiveInterval(300);//세션유지시간 30분
 	                pageName="index"; // 로그인 됐을때 보낼 페이지
 	             }
 	             else {
@@ -174,7 +173,6 @@ public class MemberController implements Action{
 		}
 		//new
 		else if(pageName.equals("chefRanking")) {//셰프들의 랭킹
-			pageName="rankingChefContentList";
 			pmap.put("field","CHEF_RANKING");
 			pmap.put("m_id","");
 			List<Map<String, Object>> list =memDao.chefDetail(pmap);
@@ -187,7 +185,8 @@ public class MemberController implements Action{
 			pmap.put("field","CHECK_CHEF");
 			List<Map<String, Object>> list =memDao.chefDetail(pmap);
 			logger.info("MemberC -  chefBoard >>>> "+list);
-			mav.addObject("list", list);
+			g = new Gson();
+			forJson = g.toJson(list);
 		}
 	      else if(pageName.equals("checkChef")) {//셰프인지 아닌지 체크
 	    	  pageName="goCookingClassRegisterSelect";
@@ -197,9 +196,10 @@ public class MemberController implements Action{
 	       }
 
 		
-		
-		//admin 해야함
-		
+	      session.setMaxInactiveInterval(30*60);//세션유지시간 찐 30분
+	      logger.info(session.getLastAccessedTime());//세션 마지막 요청시간
+	      
+	      
 		if(g == null) {
 			mav.setViewName(pageName+".jsp");
 		}else {
